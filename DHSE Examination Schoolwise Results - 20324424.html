@@ -1,0 +1,4294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0055)https://keralaresults.nic.in/dhse24mra9345/swr_dhse.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>DHSE Examination Schoolwise Results - 2024</title>
+        
+        <script language="javascript">
+            function initcon()
+            {
+                newwin();
+                setHeight();
+                document.fmhome.treg.value = "";
+                document.fmhome.treg.focus();
+
+            }
+            function setHeight()
+            {
+                if (screen.height == '600')
+                {
+                    document.getElementById('headtd').height = '100px';
+                    document.getElementById('spantd').style.height = '188px';
+                    document.getElementById('tblmain').width = '600px';
+                }
+                else
+                {
+                    document.getElementById('headtd').height = '104px';
+                    document.getElementById('spantd').style.height = '320px';
+                    document.getElementById('tblmain').width = '780px';
+                }
+            }
+            function newwin()
+            {
+                if (self != top)
+                    top.location.href = "swr_dhse.htm";
+            }
+            function IsNumeric(sText)
+            {
+                var ValidChars = "0123456789";
+                var IsNumber = true;
+                var Char;
+
+
+                for (i = 0; i < sText.length && IsNumber == true; i++)
+                {
+                    Char = sText.charAt(i);
+                    if (ValidChars.indexOf(Char) == -1)
+                    {
+                        IsNumber = false;
+                    }
+                }
+                return IsNumber;
+
+            }
+
+
+
+            function checkform()
+            {
+                if (document.fmhome.treg.value == "")
+                {
+                    alert("Enter School Code");
+                    document.fmhome.treg.value = "";
+                    document.fmhome.treg.focus();
+                    return false;
+                }
+                if (document.fmhome.treg.value.length < 5)
+                {
+                    alert("Enter valid School Code");
+                    document.fmhome.treg.value = "";
+                    document.fmhome.treg.focus();
+                    return false;
+                }
+                if (IsNumeric(document.fmhome.treg.value) == false)
+                {
+                    alert("Please enter some valid School Code");
+                    document.fmhome.treg.value = "";
+                    document.fmhome.treg.focus();
+                    return false;
+
+                }
+
+            }
+
+            function resetContents()
+            {
+                document.fmhome.treg.value = "";
+                document.getElementById("showres").innerHTML = '';
+            }
+
+            function NavigateAjax(regno)
+            {
+                if (checkform() != false)
+                {
+                    document.getElementById("showres").innerHTML = "<table width='100%' ><tr><td align='center'><img src='atom01.gif' style='border:0px'/></table></tr></td>";
+                    xmlHttp = GetXmlHttpObject()
+                    if (xmlHttp == null)
+                    {
+                        alert("Browser does not support HTTP Request")
+                        return
+                    }
+                    if (regno > 1000)
+                    {
+                        var url = "swr_dhsens.asp?treg=" + regno;
+                        url = url + "&sid=" + Math.random();
+                        xmlHttp.onreadystatechange = stateChanged;
+                        xmlHttp.open("GET", url, true);
+                        xmlHttp.send(null);
+                    }
+                    else
+                    {
+                        alert('Please Check Your School Code');
+                        document.getElementById("showres").innerHTML = "";
+                    }
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+
+            function stateChanged()
+            {
+                //if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    document.getElementById("showres").innerHTML = "";
+                    document.getElementById("showres").innerHTML = xmlHttp.responseText
+                    document.getElementById("ctrltr").style.display = 'none';
+                    document.getElementById("lnktd").style.display = '';
+                }
+            }
+            function enableCheckAnoRes()
+            {
+                document.getElementById("ctrltr").style.display = '';
+                document.getElementById("lnktd").style.display = 'none';
+                document.getElementById("showres").innerHTML = "";
+                document.fmhome.treg.value = "";
+                document.fmhome.treg.focus();
+            }
+            function GetXmlHttpObject(handler)
+            {
+                var objXMLHttp = null
+                if (window.XMLHttpRequest)
+                {
+                    objXMLHttp = new XMLHttpRequest()
+                }
+                else if (window.ActiveXObject)
+                {
+                    objXMLHttp = new ActiveXObject("Microsoft.XMLHTTP")
+                }
+                return objXMLHttp
+            }
+
+        </script>
+        <style> 
+            <!-- 		
+            td {font-family:'Verdana';font-size:12px}
+            .hdg {font-family:'Verdana';background-color:#6bc2f8;#dedede;#650d22; color:navy !important;font-weight:bold}	
+            .hdg1 {font-family:'Verdana';background:white;color:navy;font-weight:bold}
+            .hdg21 {font-family:'Verdana';background:white;color:navy;}
+            .rslt{font-family:'Verdana';background:white;#dedede;#e4dcc7;color:#660033;}
+            .mark2 {background:#d4ecfa;color:black !important;maroon;navy;}
+            .mark {background:#90d1fe;#e4d8b6;color:black !important;maroon;navy;}
+
+            a.hov:link { color: blue; text-decoration:none; }
+            a.hov:active { color: blue; text-decoration:none; }
+            a.hov:visited { color: #CC00CC; text-decoration:none; }
+            a.hov:hover { color: blue; text-decoration:none; }
+            a.lnkchkAno:link { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd}
+            a.lnkchkAno:active { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd }
+            a.lnkchkAno:visited { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd }
+            a.lnkchkAno:hover { color: #0000ff;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd}
+            -->
+        </style>
+    </head>
+    <body onload="initcon()" onfocus="setHeight()" xbottommargin="0" leftmargin="0" rightmargin="0" topmargin="5" xbgcolor="#eeeeee" background="./DHSE Examination Schoolwise Results - 2024_files/dhsepgbg2.gif">
+        <form name="fmhome" onsubmit="NavigateAjax(treg.value);
+                        return false;">
+            <table id="tblmain" align="center" bgcolor="#ffffff" xborder="0" style="COLOR:#660000;border:1px solid  #74baee" width="780px">
+                <tbody><tr xvalign="middle">
+                    <td id="headtd" align="center" width="780px" xheight="90" background="./DHSE Examination Schoolwise Results - 2024_files/dhseftr.jpg" xbgcolor="#d8d4c9" height="104px">
+                        <font style="color:#103852;font-size:20px;font-family:Adobe Garamond Pro Bold;">GOVERNMENT OF KERALA</font>
+                        <br><font style="color:#630c21;font-size:20px;font-family:Adobe Garamond Pro Bold"> Directorate of Higher Secondary Education <br>Schoolwise Results - </font> 
+                        <font style="color:#630C211;font-size:20px;font-weight:bold;font-family:Adobe Garamond Pro Bold">2024</font>
+                        <br>Results announced on 09.05.2024. Data updated on 05.06.2024
+                    </td>
+
+                </tr>
+                <tr align="center">
+                    <td xheight="300">
+                        <table align="center" border="0" style="WIDTH:100%">
+                            <tbody><tr id="ctrltr" style="display: none;">
+                                <td width="40%" align="right" style="color:#630C21">
+                                    <b>School Code</b>
+                                </td>
+                                <td width="20%" align="center"><input type="text" name="treg" maxlength="5" style="FONT-WEIGHT: bold; FONT-SIZE: 12px; BORDER-LEFT-COLOR:#c1eafc ;  BACKGROUND: #e6f4fd; BORDER-BOTTOM-COLOR: #bee4fb; WIDTH: 97px; COLOR: #630C21; BORDER-TOP-COLOR:#c1eafc ; FONT-FAMILY: verdana; TEXT-ALIGN: center; BORDER-RIGHT-COLOR: #bee4fb">
+                                </td>
+                                <td align="left"><input type="button" name="bsubmit" value="Submit" onclick="return NavigateAjax(treg.value)" style="BORDER:2 solid #1181a4; FONT-WEIGHT:bold; BORDER-LEFT:#EDEADD 1px solid; COLOR:#000; BACKGROUND-COLOR:#75c5f8">&nbsp;
+                                    <input type="button" value=" Reset " name="breset" onclick="resetContents()" style=" FONT-WEIGHT: bold; BORDER-LEFT: #EDEADD 1px solid; COLOR: #000; BORDER:2 solid #1181a4; BACKGROUND-COLOR: #75c5f8"></td><td>
+                                    <span style="align:right"><a href="https://keralaresults.nic.in/dhse24mra9345/dhse.htm"><img title="Check Individual Results" src="./DHSE Examination Schoolwise Results - 2024_files/individual.png" border="0" height="30px"></a></span>
+                                </td>
+                            </tr>
+                            <tr id="lnktd" style="">
+                                <td colspan="3" align="center"><a href="javascript:void enableCheckAnoRes()" class="lnkchkAno">&nbsp;&nbsp;CHECK 
+                                        ANOTHER SCHOOL RESULT&nbsp;&nbsp;</a></td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="spantd" height="320" style="height: 320px;">
+                        <span id="showres" valign="top" style="WIDTH: 100%; HEIGHT: 100%; BACKGROUND-COLOR: transparent; TEXT-ALIGN: center">
+<div align="center"><center>
+
+<table border="0" width="75%" cellspacing="1" cellpadding="3" align="center" style="border-right:1px solid #AF9441;BACKGROUND:#1571b4;#fff; color:#fff" id="Table3">
+	<tbody><tr><td colspan="16">School Code : <b>08075</b></td></tr>
+	<tr class="hdg">
+        <td>Roll No</td>
+        <td>Name</td>
+        <td>Group</td>
+        <td colspan="2">Subject-1</td>
+        <td colspan="2">Subject-2</td>
+        <td colspan="2">Subject-3</td>
+        <td colspan="2">Subject-4</td>
+        <td colspan="2">Subject-5</td>
+        <td colspan="2">Subject-6</td>
+        <td>Result</td>
+    </tr>
+
+	
+	
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180249</td>
+    <td align="left">AJITH T S                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(101) </b></td>
+    <td>MALAYALAM </td><td><b>B+ &nbsp;(155) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(126) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(139) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(140) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180251</td>
+    <td align="left">BIYON BYJU T                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(174) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180252</td>
+    <td align="left">CLEETUS T J                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(134) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(140) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(131) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(164) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(157) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180253</td>
+    <td align="left">JOSHUA T JOSE                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>C  &nbsp;(89 ) </b></td>
+    <td>MALAYALAM </td><td><b>B+ &nbsp;(144) </b></td>
+    <td>PHYSICS</td><td><b>C+ &nbsp;(100) </b></td>
+    <td>CHEMISTRY</td><td><b>D  &nbsp;(86 ) </b></td>
+    <td>BIOLOGY</td><td><b>C+ &nbsp;(111) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(124) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180255</td>
+    <td align="left">KARTHIK K A                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(171) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(156) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(170) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(174) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180256</td>
+    <td align="left">NANDAKISHORE KOVATH                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180258</td>
+    <td align="left">STEEV RAJU K                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180259</td>
+    <td align="left">VINAY KRISHNA A.A                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(156) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(178) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(175) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180260</td>
+    <td align="left">VYSHNAV VIJAYAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(134) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(122) </b></td>
+    <td>BIOLOGY</td><td><b>B  &nbsp;(134) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(143) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180261</td>
+    <td align="left">AARYA A R                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180262</td>
+    <td align="left">ADHITHYA K A                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(169) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180263</td>
+    <td align="left">ADITHYA SUBHASH                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(170) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(177) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180264</td>
+    <td align="left">ADITHYA.M.D                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(164) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(160) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(177) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(176) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180265</td>
+    <td align="left">ALEETTA JOHNSON                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180266</td>
+    <td align="left">ALNA GEORGE                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(170) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(170) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(178) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(177) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(183) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180267</td>
+    <td align="left">ANAMIKA N R                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180268</td>
+    <td align="left">ANCHALA MARIA T D                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(178) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(175) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180269</td>
+    <td align="left">ANEENA K VARGHESE                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180271</td>
+    <td align="left">ANGEL MARIYA K M                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(185) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180272</td>
+    <td align="left">ANJALI V G                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(171) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180273</td>
+    <td align="left">ANN MARIA JIPSON                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(164) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(160) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(165) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(156) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180274</td>
+    <td align="left">ANNA VARGHESE                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180275</td>
+    <td align="left">APARNA MANESH                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180277</td>
+    <td align="left">ATHIRA P B                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(175) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(179) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(176) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180278</td>
+    <td align="left">AVANTHIKA MOHAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(170) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>C+ &nbsp;(110) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(123) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(140) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180279</td>
+    <td align="left">AVEMARIYA JOSE                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180280</td>
+    <td align="left">C S MEERA NAMBEESAN                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(175) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180281</td>
+    <td align="left">CATHERINE JOSE                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180282</td>
+    <td align="left">CHRISTA MARIYA P R                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180283</td>
+    <td align="left">CINTA MARTIN                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180284</td>
+    <td align="left">IRINE K RAJU                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180285</td>
+    <td align="left">KRISHNA PRIYA D.R                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>C+ &nbsp;(116) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(148) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180286</td>
+    <td align="left">LENA GINZ                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(175) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(175) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180287</td>
+    <td align="left">MALAVIKA. K. P                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(166) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(120) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(137) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(163) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180288</td>
+    <td align="left">MEGHA T P                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180289</td>
+    <td align="left">MILA ROSMINE C L                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180290</td>
+    <td align="left">NANDHANA K S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(131) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(193) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(161) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(153) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(166) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180291</td>
+    <td align="left">NEHA DISAN                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(179) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(179) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180292</td>
+    <td align="left">PRAVITHA K PRASENAN                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(131) </b></td>
+    <td>MALAYALAM </td><td><b>A  &nbsp;(168) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(144) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(165) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(147) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180293</td>
+    <td align="left">ROSMINE T T                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180294</td>
+    <td align="left">SANTA MARIA JUSTIN                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180295</td>
+    <td align="left">SAYAN MAREESA                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180296</td>
+    <td align="left">SENA SUSHIL                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(179) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180297</td>
+    <td align="left">SIYA K S                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(161) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180298</td>
+    <td align="left">SWATHIKA SANTHOSH                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(175) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(166) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(185) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180299</td>
+    <td align="left">TESSA MALIAKKEL                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180300</td>
+    <td align="left">ABHISHEK FRANCIS                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(179) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180301</td>
+    <td align="left">ADWAITH DHANESH                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(160) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(177) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180302</td>
+    <td align="left">AKHIL CHANDRAN                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(173) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(163) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(172) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180303</td>
+    <td align="left">ALBIN ANTONY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(171) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(164) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(161) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(169) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(174) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180304</td>
+    <td align="left">ALBIN J ALAPPAT                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(178) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180305</td>
+    <td align="left">ALVIN C L                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180306</td>
+    <td align="left">ANLIN P JOSHY                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(161) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(162) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(164) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(167) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(178) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180307</td>
+    <td align="left">ATHUL V MANOJ                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(169) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(155) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(161) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180308</td>
+    <td align="left">DAWN BIJU                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(172) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180309</td>
+    <td align="left">DEEPTH. P .VINU                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180310</td>
+    <td align="left">DHANANJAY MOHAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(133) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180311</td>
+    <td align="left">EDRIC MATHEW                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(171) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(169) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180313</td>
+    <td align="left">JOSEN JOS JOSHY                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(138) </b></td>
+    <td>HINDI</td><td><b>A  &nbsp;(178) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(126) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(132) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(154) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180315</td>
+    <td align="left">PRINCE P C                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(172) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180316</td>
+    <td align="left">SEBASTIAN K S                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(167) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180317</td>
+    <td align="left">SHAAMYAK P.S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180318</td>
+    <td align="left">ABINI SHRINE K B                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180319</td>
+    <td align="left">AKHILA CHANDRAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180320</td>
+    <td align="left">ALEENA VARGHESE                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(117) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180321</td>
+    <td align="left">ALEESHA K R                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180322</td>
+    <td align="left">ALEESHA P O                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(160) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(173) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(164) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180323</td>
+    <td align="left">ALNA JUSTIN                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180324</td>
+    <td align="left">ALVINAMOL JOBY                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(136) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(137) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(137) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(150) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180325</td>
+    <td align="left">ANAMIKA SHYJESH                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(177) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(176) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180326</td>
+    <td align="left">ANANYA N R                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(160) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(161) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(167) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(178) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180327</td>
+    <td align="left">ANDREA JOSE                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(171) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180328</td>
+    <td align="left">ANGEL GEORGE                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(171) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180329</td>
+    <td align="left">ANJALO THOMAS                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(161) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(170) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(167) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180330</td>
+    <td align="left">ANN MARIA GLENNY                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(172) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180331</td>
+    <td align="left">ANNA MARIYA ROBY                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180332</td>
+    <td align="left">ANSA ANTO                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180333</td>
+    <td align="left">ANSA SEBASTIAN                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180334</td>
+    <td align="left">ANUSHKA. K .B                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(170) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180335</td>
+    <td align="left">ANVIYA C T                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180336</td>
+    <td align="left">ARCHANA RAJAN T                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180337</td>
+    <td align="left">ARSHA VARGHESE                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(178) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(156) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(171) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180338</td>
+    <td align="left">ASIN SUNIL                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(160) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(138) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(140) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(149) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180339</td>
+    <td align="left">ASWAJA R NARAYAN                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180340</td>
+    <td align="left">ATHIRA P                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180341</td>
+    <td align="left">DAYA DINESH                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(145) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(138) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(163) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(137) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180342</td>
+    <td align="left">DEVIKA K. J                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180343</td>
+    <td align="left">DIYA REMESAN                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180344</td>
+    <td align="left">DIYA SIVAKUMAR V                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180345</td>
+    <td align="left">EIDEL STANLEY                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180346</td>
+    <td align="left">ELNA JOSE                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(170) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(164) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(178) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(177) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180347</td>
+    <td align="left">FEMILA J NEELAMKAVIL                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(174) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(172) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(179) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180348</td>
+    <td align="left">GLORIA SUNNY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180349</td>
+    <td align="left">IRIN THOMAS                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(165) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(167) </b></td>
+    <td>BIOLOGY</td><td><b>A  &nbsp;(174) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(175) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180350</td>
+    <td align="left">JEEYANNA MARIYA JOB                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(188) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180351</td>
+    <td align="left">KEERTHANA E B                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180352</td>
+    <td align="left">MARIA JOJO K                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180353</td>
+    <td align="left">MINI T M                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(174) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(177) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(186) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180354</td>
+    <td align="left">NILA V B                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180355</td>
+    <td align="left">NIYA MARIA                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(179) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(175) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(184) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180356</td>
+    <td align="left">NIYA T D                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(162) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(128) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(163) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180357</td>
+    <td align="left">PRARTHANA SUMESH                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180358</td>
+    <td align="left">RAVEENA G R                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(171) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(130) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(140) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(140) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180359</td>
+    <td align="left">RISIL RANJU                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180360</td>
+    <td align="left">SAI PAVITHRA R                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180361</td>
+    <td align="left">SAYANA MARIYA BIBIN                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(128) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(130) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(158) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180362</td>
+    <td align="left">SHREYA K M                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180363</td>
+    <td align="left">SREELAKSHMI V                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(137) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(127) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(143) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180364</td>
+    <td align="left">SREYA K S                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(179) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180365</td>
+    <td align="left">THERESE BIJI PAUL                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BIOLOGY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180366</td>
+    <td align="left">VIDYALAKSHMI V                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(150) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(131) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(132) </b></td>
+    <td>BIOLOGY</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(139) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180367</td>
+    <td align="left">AARON SHAJU                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(161) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(170) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(160) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180368</td>
+    <td align="left">ABISHEK MANOJ                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>MALAYALAM </td><td><b>B  &nbsp;(138) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(144) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(159) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180369</td>
+    <td align="left">ADARSH K S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(171) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(191) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(144) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(127) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(164) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(182) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180370</td>
+    <td align="left">ALAN FRANCIS                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(167) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(186) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(176) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(177) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180371</td>
+    <td align="left">GOUTHAM KRISHNA. A                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(180) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(170) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(178) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180372</td>
+    <td align="left">JAGAJITHKRISHNA MUKUNDAN                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(178) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180373</td>
+    <td align="left">JAIMIN P J                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(131) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(153) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(134) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(176) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(173) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180374</td>
+    <td align="left">JEESMON JOSEPH A                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(155) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(150) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(167) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180375</td>
+    <td align="left">JOE ANTONY CLINSON                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(178) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180376</td>
+    <td align="left">KASINATHAN K V                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(127) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(131) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>B+ &nbsp;(149) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(156) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180377</td>
+    <td align="left">MANU K THOMAS                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(193) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(167) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(188) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180378</td>
+    <td align="left">PAWAL LEO                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180379</td>
+    <td align="left">SNEHIDH P S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(156) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(172) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(176) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180380</td>
+    <td align="left">SREEHARI M S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180381</td>
+    <td align="left">ADHEENA K T                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180382</td>
+    <td align="left">IRENE BIJU                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180383</td>
+    <td align="left">MARIYA WILSON K                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180384</td>
+    <td align="left">NAMITHA TONY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180385</td>
+    <td align="left">PAVITHRA P V                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(124) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(129) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>B+ &nbsp;(144) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(127) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180386</td>
+    <td align="left">POURNAMY P S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(188) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180387</td>
+    <td align="left">ROSELIN SAVY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180388</td>
+    <td align="left">SIVAKAMI N BAIJU                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(144) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(140) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(175) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(169) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180389</td>
+    <td align="left">UDAYAKRISHNA P HARILAL                                                                              </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180390</td>
+    <td align="left">AADITHYA SREEJITH                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(160) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(176) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(166) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(186) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(185) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180391</td>
+    <td align="left">AARAV PRABU A B                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(145) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>C+ &nbsp;(119) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(135) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(170) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(146) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180392</td>
+    <td align="left">ABHEEN K S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>CHEMISTRY</td><td><b>C+ &nbsp;(119) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(186) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(148) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180393</td>
+    <td align="left">ABIN JINOJ                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180394</td>
+    <td align="left">ALEX B PUTHUMANA                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(173) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(170) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(166) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(175) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180395</td>
+    <td align="left">ARNOLD T P                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(162) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(174) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(188) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180396</td>
+    <td align="left">ATHUL KRISHNA V R                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180397</td>
+    <td align="left">BIJITH A B                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(161) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(170) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(168) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>B+ &nbsp;(154) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(186) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180398</td>
+    <td align="left">DELJO MARTIN                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(141) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(140) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(166) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(160) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180399</td>
+    <td align="left">DEON GINCE CHEVOOKARAN                                                                              </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(175) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180400</td>
+    <td align="left">JERIN JOJU                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180401</td>
+    <td align="left">JITH FRANCIS                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180402</td>
+    <td align="left">JOMON JOJO                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180403</td>
+    <td align="left">LIYAS GILLS.V                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(162) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(164) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(163) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(174) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(182) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180404</td>
+    <td align="left">NIVEDHKRISHNA T R                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180405</td>
+    <td align="left">PRANAV NARAYAN K S                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(138) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(145) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(138) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>B+ &nbsp;(158) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(168) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180406</td>
+    <td align="left">RIJO PAUL                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(153) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(150) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(179) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(171) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180407</td>
+    <td align="left">SHINAS.P.P                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(175) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180408</td>
+    <td align="left">SOORAJ P. R                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(168) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(170) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(170) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180409</td>
+    <td align="left">SREEHARI V S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(141) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(172) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(183) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180410</td>
+    <td align="left">ABLE SHANTO A                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(174) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(182) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(185) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180411</td>
+    <td align="left">AMALENDHU BINDHIL                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180412</td>
+    <td align="left">AMEYA K M                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(174) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180413</td>
+    <td align="left">ANANYA C H                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180414</td>
+    <td align="left">ANJALI K JOSHY                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180415</td>
+    <td align="left">ANN ROSE C J                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180416</td>
+    <td align="left">ANUPAMA VASUDEVAN                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180417</td>
+    <td align="left">AVANI SUJESH                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(164) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(171) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180418</td>
+    <td align="left">DEVINANDHA V R                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180419</td>
+    <td align="left">LAKSHMI N MANOJ                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180420</td>
+    <td align="left">LEEDHIA JIJI                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(170) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(164) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(162) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(180) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180421</td>
+    <td align="left">LILLY ANTO                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(162) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(175) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(161) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(169) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(193) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180422</td>
+    <td align="left">P NIRANJANA                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180423</td>
+    <td align="left">SANIYA JOS K                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(177) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(176) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180424</td>
+    <td align="left">SIVANI M PRAKASH                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180425</td>
+    <td align="left">SREEKALA K R                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(176) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(174) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(170) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180426</td>
+    <td align="left">SURYA SREE S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(147) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(126) </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>A  &nbsp;(176) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(167) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180427</td>
+    <td align="left">AAKASH C J                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(130) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(122) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(122) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(164) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(148) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180428</td>
+    <td align="left">ADHIL RIBY                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(138) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(124) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(125) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(141) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180429</td>
+    <td align="left">ADHISH SAJI                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180430</td>
+    <td align="left">AJOSH C J                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(176) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180431</td>
+    <td align="left">AKASH E. A                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(153) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(175) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(188) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180432</td>
+    <td align="left">ALFRED SEBASTIAN                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(160) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(131) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(175) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(164) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180433</td>
+    <td align="left">ALLEN LAWRANCE                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(123) </b></td>
+    <td>MALAYALAM </td><td><b>B+ &nbsp;(154) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(130) </b></td>
+    <td>CHEMISTRY</td><td><b>D  &nbsp;(111) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(152) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180434</td>
+    <td align="left">ASTTIL JOSEPH                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(174) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(145) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(121) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(145) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180435</td>
+    <td align="left">AUSTIN M A                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180436</td>
+    <td align="left">AUSTIN ROYSON                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180437</td>
+    <td align="left">BENSON B B                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180438</td>
+    <td align="left">CHRIS ANTONY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(144) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(178) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(159) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180439</td>
+    <td align="left">DAVID ALAPPAT                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180440</td>
+    <td align="left">DINIL K. D                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(172) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(166) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(188) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180441</td>
+    <td align="left">EDWIN.C.S                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(163) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(168) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(162) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(182) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(186) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180442</td>
+    <td align="left">EJO ANTO K                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(164) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(133) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(173) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(161) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180443</td>
+    <td align="left">FAYAS K A                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(131) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(139) </b></td>
+    <td>ELECTRONICS </td><td><b>B+ &nbsp;(158) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(128) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180444</td>
+    <td align="left">GOWTHAM GOVIND G                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>MALAYALAM </td><td><b>A  &nbsp;(168) </b></td>
+    <td>PHYSICS</td><td><b>D  &nbsp;(97 ) </b></td>
+    <td>CHEMISTRY</td><td><b>D  &nbsp;(107) </b></td>
+    <td>ELECTRONICS </td><td><b>B  &nbsp;(128) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>D  &nbsp;(108) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180445</td>
+    <td align="left">HENRY A D J                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(124) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(138) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(166) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180446</td>
+    <td align="left">JITHIN JOY                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180447</td>
+    <td align="left">JOSEPH S KOOLA                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(155) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(134) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(145) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180448</td>
+    <td align="left">K G CHRISTANNO                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(181) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(160) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180449</td>
+    <td align="left">LENON JOE LLOYD                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(155) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(174) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(174) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(180) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180450</td>
+    <td align="left">MICHAEL CHALISSERRY MARTIN                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(186) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(136) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(168) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(154) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180451</td>
+    <td align="left">NIDHIN STANLIN                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180452</td>
+    <td align="left">NISTAL KANNATH                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(186) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(127) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(173) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(170) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180453</td>
+    <td align="left">NISTIL ROOY A J                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(153) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(177) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180455</td>
+    <td align="left">RENIX JOSEPH                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180456</td>
+    <td align="left">RITHUKRISHNA M U                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(136) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(181) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(160) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(168) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180457</td>
+    <td align="left">SAMJO ROYSON                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180458</td>
+    <td align="left">SAMPRES C S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(160) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(172) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(178) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180459</td>
+    <td align="left">VINU VINSON                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(167) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(175) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180460</td>
+    <td align="left">ANUPAMA K P                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(174) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>PHYSICS</td><td><b>C+ &nbsp;(117) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(129) </b></td>
+    <td>ELECTRONICS </td><td><b>B+ &nbsp;(146) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(132) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180461</td>
+    <td align="left">GOURI NANDANA BABURAJ                                                                               </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180462</td>
+    <td align="left">LENA MARIYA THOMSON                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(173) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(167) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(188) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180463</td>
+    <td align="left">MIYABETH V F                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180464</td>
+    <td align="left">SURYA PRIYA P S                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180465</td>
+    <td align="left">AARYAN JAYACHANDRAN                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(145) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(127) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(175) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(167) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180466</td>
+    <td align="left">AIDEN JOY                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(123) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(122) </b></td>
+    <td>ELECTRONICS </td><td><b>B+ &nbsp;(153) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B  &nbsp;(133) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180467</td>
+    <td align="left">ALVIN JOY                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(152) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180468</td>
+    <td align="left">ANANDH SEKHAR P P                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180469</td>
+    <td align="left">ANTONY THOMAS ROY                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(171) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(166) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(183) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180470</td>
+    <td align="left">AYUSH K R                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(142) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(136) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(155) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180471</td>
+    <td align="left">B NAVANEETH NAMBOOTHIRI                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(165) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(167) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(168) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(177) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180472</td>
+    <td align="left">EALWIN ANTONY MANOJ                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(173) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(189) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180473</td>
+    <td align="left">EMRIC MATHEW                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(161) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>B  &nbsp;(120) </b></td>
+    <td>CHEMISTRY</td><td><b>B  &nbsp;(138) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(153) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180474</td>
+    <td align="left">JAIN SEBASTIAN                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180475</td>
+    <td align="left">JEETH SURENDRAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(172) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180476</td>
+    <td align="left">PRANAV P AJITH                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(166) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>ELECTRONICS </td><td><b>A  &nbsp;(178) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(169) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180477</td>
+    <td align="left">WILLIAM BANCHAMIN                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(163) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(167) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(173) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180478</td>
+    <td align="left">ALFIYA BABU                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>C  &nbsp;(98 ) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>PHYSICS</td><td><b>C+ &nbsp;(119) </b></td>
+    <td>CHEMISTRY</td><td><b>D  &nbsp;(105) </b></td>
+    <td>ELECTRONICS </td><td><b>B+ &nbsp;(142) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>C+ &nbsp;(116) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180479</td>
+    <td align="left">APARNA T P                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(173) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180480</td>
+    <td align="left">BENERIN GRACE ROBI                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(168) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(150) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(169) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180481</td>
+    <td align="left">DEVIKA K                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(184) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>A  &nbsp;(177) </b></td>
+    <td>CHEMISTRY</td><td><b>A  &nbsp;(175) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180482</td>
+    <td align="left">MEHARUNNISA R A                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(180) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(190) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180483</td>
+    <td align="left">NIDHI MATHEW K                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180484</td>
+    <td align="left">RISWANA K R                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>PHYSICS</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>CHEMISTRY</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180485</td>
+    <td align="left">SANA MARTIN                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(140) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>B+ &nbsp;(145) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180486</td>
+    <td align="left">SANMARIYA SANU                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(150) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(197) </b></td>
+    <td>PHYSICS</td><td><b>B+ &nbsp;(155) </b></td>
+    <td>CHEMISTRY</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>ELECTRONICS </td><td><b>A+ &nbsp;(190) </b></td>
+    <td>MATHEMATICS-SCI</td><td><b>A  &nbsp;(172) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180487</td>
+    <td align="left">AADHIKRISHNA V. S                                                                                   </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(108) </b></td>
+    <td>MALAYALAM </td><td><b>A  &nbsp;(174) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(119) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B  &nbsp;(125) </b></td>
+    <td>ECONOMICS </td><td><b>C+ &nbsp;(111) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(124) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180488</td>
+    <td align="left">AARON PAULJO                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(130) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(139) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(177) </b></td>
+    <td>ECONOMICS </td><td><b>B  &nbsp;(129) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(126) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180489</td>
+    <td align="left">ABIN C J                                                                                            </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(116) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B+ &nbsp;(158) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>ECONOMICS </td><td><b>B  &nbsp;(127) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(126) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180490</td>
+    <td align="left">AKHIL SOJEN C                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180491</td>
+    <td align="left">ALJO JOYSON                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(107) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(133) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(117) </b></td>
+    <td>ECONOMICS </td><td><b>B  &nbsp;(124) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(132) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180492</td>
+    <td align="left">ANOSH J ALAPPATT                                                                                    </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(169) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(171) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(188) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180493</td>
+    <td align="left">ANWAR R V                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B+ &nbsp;(151) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(142) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(138) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180494</td>
+    <td align="left">ASHLIN BABU                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(109) </b></td>
+    <td>MALAYALAM </td><td><b>B  &nbsp;(124) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(122) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(116) </b></td>
+    <td>ECONOMICS </td><td><b>C  &nbsp;(98 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(129) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180495</td>
+    <td align="left">BHIMAL P BABY                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C  &nbsp;(90 ) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(117) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(117) </b></td>
+    <td>ECONOMICS </td><td><b>C  &nbsp;(97 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(124) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180496</td>
+    <td align="left">EMMANUEL JAISON                                                                                     </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(190) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180497</td>
+    <td align="left">FLAIZIN ROJO                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(165) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(180) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(185) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(191) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(180) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180498</td>
+    <td align="left">JERIN JOY                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(190) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(182) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180499</td>
+    <td align="left">JESVIN JOSE                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>D  &nbsp;(75 ) </b></td>
+    <td>MALAYALAM </td><td><b>B  &nbsp;(124) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>D  &nbsp;(82 ) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>D  &nbsp;(89 ) </b></td>
+    <td>ECONOMICS </td><td><b>D  &nbsp;(75 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>D  &nbsp;(89 ) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180500</td>
+    <td align="left">JILFIN K. R                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(101) </b></td>
+    <td>MALAYALAM </td><td><b>B  &nbsp;(125) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(101) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(116) </b></td>
+    <td>ECONOMICS </td><td><b>C  &nbsp;(91 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>C+ &nbsp;(119) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180501</td>
+    <td align="left">JOBITT T. J                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C  &nbsp;(95 ) </b></td>
+    <td>MALAYALAM </td><td><b>B  &nbsp;(133) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C  &nbsp;(91 ) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(103) </b></td>
+    <td>ECONOMICS </td><td><b>C  &nbsp;(90 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>C+ &nbsp;(114) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180502</td>
+    <td align="left">JOHN JOJI CHIRAYATH                                                                                 </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(161) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(162) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(172) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180503</td>
+    <td align="left">JOSEPH SANIL                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(130) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(191) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(166) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(179) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(142) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(181) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180504</td>
+    <td align="left">KEVIN JOBY                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(155) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(190) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(183) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(159) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(177) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180505</td>
+    <td align="left">KEVIN N ANAND                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(143) </b></td>
+    <td>MALAYALAM </td><td><b>A  &nbsp;(165) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(124) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B  &nbsp;(129) </b></td>
+    <td>ECONOMICS </td><td><b>C  &nbsp;(96 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(130) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180506</td>
+    <td align="left">MINTO JOSE                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(182) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B+ &nbsp;(156) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(189) </b></td>
+    <td>ECONOMICS </td><td><b>B  &nbsp;(133) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B+ &nbsp;(152) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180507</td>
+    <td align="left">NITHIN O S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(150) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(173) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(183) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180508</td>
+    <td align="left">SANGEETH. M. K                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(121) </b></td>
+    <td>MALAYALAM </td><td><b>A  &nbsp;(179) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(123) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>ECONOMICS </td><td><b>B  &nbsp;(122) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(124) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180509</td>
+    <td align="left">SAVIO PAUL                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(188) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(167) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(184) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180510</td>
+    <td align="left">THEJUS K S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(109) </b></td>
+    <td>MALAYALAM </td><td><b>B+ &nbsp;(158) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(114) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>D  &nbsp;(104) </b></td>
+    <td>ECONOMICS </td><td><b>D  &nbsp;(85 ) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(121) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180511</td>
+    <td align="left">THOMAS JOHNSON                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(182) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(175) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(175) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180512</td>
+    <td align="left">ALEENA K. B                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(172) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(188) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(166) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(166) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180513</td>
+    <td align="left">ANGEL P. A                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B  &nbsp;(137) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(130) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(149) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B+ &nbsp;(146) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180514</td>
+    <td align="left">ANGEL ROSE K.P.                                                                                     </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(188) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(179) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180515</td>
+    <td align="left">ANNJALIN JOPS                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(180) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(182) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(185) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180517</td>
+    <td align="left">ARYA M S                                                                                            </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(170) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(179) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(147) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(160) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180518</td>
+    <td align="left">DEVIKA P S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(179) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(199) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180519</td>
+    <td align="left">GOPIKA T S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(102) </b></td>
+    <td>MALAYALAM </td><td><b>B+ &nbsp;(154) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(110) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B  &nbsp;(129) </b></td>
+    <td>ECONOMICS </td><td><b>C+ &nbsp;(100) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>D  &nbsp;(108) </b></td>
+    <td style="font-weight:bold">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180520</td>
+    <td align="left">HANNA JOHNSON                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(183) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(163) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(165) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(172) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180521</td>
+    <td align="left">IRIN SHAJU                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(183) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180522</td>
+    <td align="left">KRISHNENDHU P.S                                                                                     </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(157) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(168) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>ECONOMICS </td><td><b>B  &nbsp;(138) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(133) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180523</td>
+    <td align="left">MANHA S NATH                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180524</td>
+    <td align="left">NANDANA BIJU                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(175) </b></td>
+    <td>MALAYALAM </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(185) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(187) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(197) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180525</td>
+    <td align="left">ABIJEETH SANTHOSH                                                                                   </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(151) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(166) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(171) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(146) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(178) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180526</td>
+    <td align="left">ANSAN B S                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(158) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(169) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(172) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(158) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B+ &nbsp;(152) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180527</td>
+    <td align="left">JEES K RAPHEL                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(115) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(186) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(119) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(118) </b></td>
+    <td>ECONOMICS </td><td><b>C+ &nbsp;(105) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(127) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180528</td>
+    <td align="left">JIBIN BIJU                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>C+ &nbsp;(104) </b></td>
+    <td>HINDI</td><td><b>A  &nbsp;(166) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>C+ &nbsp;(110) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>C+ &nbsp;(112) </b></td>
+    <td>ECONOMICS </td><td><b>C+ &nbsp;(101) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>C+ &nbsp;(116) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180529</td>
+    <td align="left">PAVIN P MANOHAR                                                                                     </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(176) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(168) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(160) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B+ &nbsp;(151) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180530</td>
+    <td align="left">SAIKRISHNA S                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(191) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(197) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180531</td>
+    <td align="left">ANAMIKA T. D                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(176) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(195) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(182) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180532</td>
+    <td align="left">ANGEL THOMAS                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(146) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(123) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(148) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(147) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B+ &nbsp;(144) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180533</td>
+    <td align="left">ASWATHY K                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(177) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180534</td>
+    <td align="left">AVE MARIYA A J                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(187) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(180) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(198) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180535</td>
+    <td align="left">EVELIN ROSE LISON                                                                                   </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(189) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(194) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180536</td>
+    <td align="left">HARINANDHANA P                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(192) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(200) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(199) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180537</td>
+    <td align="left">JOSIYA P BINOY                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(170) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(198) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(192) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(195) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180538</td>
+    <td align="left">MALAVIKA. P .S                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(160) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(123) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(159) </b></td>
+    <td>ECONOMICS </td><td><b>C+ &nbsp;(108) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B+ &nbsp;(148) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180539</td>
+    <td align="left">MARIYA JOY                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(173) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(196) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(173) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(190) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(155) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(183) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180540</td>
+    <td align="left">MERIN B JOSSY                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(196) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(198) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(200) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180541</td>
+    <td align="left">NIMYA ANILAN                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A+ &nbsp;(181) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(199) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A+ &nbsp;(194) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(193) </b></td>
+    <td>ECONOMICS </td><td><b>A+ &nbsp;(180) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A+ &nbsp;(192) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180542</td>
+    <td align="left">NITHA JOHN M                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>A  &nbsp;(161) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(194) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B+ &nbsp;(144) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A  &nbsp;(169) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(146) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(161) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">23180543</td>
+    <td align="left">SURYA K. S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(141) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(195) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>A  &nbsp;(177) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>A+ &nbsp;(188) </b></td>
+    <td>ECONOMICS </td><td><b>A  &nbsp;(173) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>A  &nbsp;(173) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">23180544</td>
+    <td align="left">VYDEHI N PREMKUMAR                                                                                  </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>B+ &nbsp;(149) </b></td>
+    <td>HINDI</td><td><b>A+ &nbsp;(200) </b></td>
+    <td>BUSINESS STUDIES WITH   FUNCTIONAL MANAGEMENT </td><td><b>B  &nbsp;(132) </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>B+ &nbsp;(154) </b></td>
+    <td>ECONOMICS </td><td><b>B+ &nbsp;(144) </b></td>
+    <td>COMPUTER APPLICATION-COM</td><td><b>B  &nbsp;(128) </b></td>
+    <td style="font-weight:bold">EHS</td>
+    </tr>
+    
+	
+	<tr>
+	<td colspan="16" style="background-color:White">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="16" class="mark">
+            <span style="font-size:12px">	
+                A+ : Total Score 200-180 , A : Total Score 179-160 , <br>
+                B+ : Total Score 159-140 , B : Total Score 139-120 , <br>
+                C+ : Total Score 119-100 with TE Score Greater Than or Equal To 30% of TE Maximum ,<br>
+                C : Total Score 99-80 with TE Score Greater Than or Equal To 30% of TE Maximum ,<br>
+                D+ : Total Score 79-60 with TE Score Greater Than or Equal To 30% of TE Maximum,<br>
+                D : Total Score 59-40 with TE Score lesser Than 30% of TE Maximum<br>
+                E : Total Score Below 40<br>
+                [For Music 30% of the maximim Score of PE&amp;TE is Necessary for D+ Grade or Above]
+            </span>
+
+		</td>
+	</tr>
+</tbody></table>
+<br>
+
+<br>
+</center>
+</div>
+</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="footertd" align="center" height="70" background="./DHSE Examination Schoolwise Results - 2024_files/dhseftr.jpg" xbgcolor="#305876">
+                        Data Provided By Directorate of Higher Secondary Education, Kerala.
+                        <br>
+                        IT Support by <a target="_blank" href="http://www.kerala.nic.in/" class="hov" style="TEXT-DECORATION:none;xcolor:#5305876">
+                            National Informatics Centre</a>, Kerala State Centre.<br>
+                        <br>
+                        <div style="font-face:verdana;font-size:11px;color:#660000;#0F3D6A;text-align:justify"><u>Disclaimer</u>:  Neither NIC nor Directorate of Higher Secondary Education is responsible for any inadvertent error that may have crept in the results being published on net. The results published on net are for immediate information to the examinees.These cannot be treated as original mark sheets. Original marksheets will be issued by the Directorate of Higher Secondary Education separately. 
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </form>
+    
+
+</body></html>
