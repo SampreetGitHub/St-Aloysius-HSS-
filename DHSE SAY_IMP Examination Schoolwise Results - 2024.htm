@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+		<title>DHSE SAY/IMP Examination Schoolwise Results - 2024</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<script language="javascript">
+function initcon()
+{	newwin();
+	setHeight();
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+
+}
+function setHeight()
+{
+	if(screen.height == '600')
+	{
+		document.getElementById('headtd').height='100px';
+		document.getElementById('spantd').style.height='188px';
+		document.getElementById('tblmain').width='600px';
+	}
+	else
+	{
+		document.getElementById('headtd').height='104px';
+		document.getElementById('spantd').style.height='320px';
+		document.getElementById('tblmain').width='780px';
+	}
+}
+function newwin()
+{
+if (self != top) 
+top.location.href="swr_dhsesay.htm";
+}
+function IsNumeric(sText)
+{
+   var ValidChars = "0123456789";
+   var IsNumber=true;
+   var Char;
+
+ 
+   for (i = 0; i < sText.length && IsNumber == true; i++) 
+      { 
+      Char = sText.charAt(i); 
+      if (ValidChars.indexOf(Char) == -1) 
+         {
+         IsNumber = false;
+         }
+      }
+   return IsNumber;
+   
+ }
+
+
+
+function checkform()
+{
+  if(document.fmhome.treg.value == "")
+  {
+   	alert("Enter School Code");
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+   return false;
+  }
+  if(document.fmhome.treg.value.length < 5)
+  {
+    alert("Enter valid School Code");
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+	return false;
+  }
+  if(IsNumeric(document.fmhome.treg.value)==false)
+  {
+	alert("Please enter some valid School Code");
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+	return false;
+
+  }
+
+}
+
+function resetContents()
+{
+	document.fmhome.treg.value = "";
+	document.getElementById("showres").innerHTML='';
+}
+
+function NavigateAjax(regno)
+{
+	if(checkform() != false)
+	{
+		document.getElementById("showres").innerHTML="<table width='100%' ><tr><td align='center'><img src='atom01.gif' style='border:0px'/></table></tr></td>";
+		xmlHttp=GetXmlHttpObject()
+		if (xmlHttp==null)
+		{
+		alert ("Browser does not support HTTP Request")
+		return
+		} 
+		if(regno > 1000)
+		{
+			var url="swr_dhsesay.asp?treg="+regno;	
+			url=url+"&sid="+Math.random();
+			xmlHttp.onreadystatechange=stateChanged ;
+			xmlHttp.open("GET",url,true);
+			xmlHttp.send(null);
+		}
+		else
+		{
+			//var url="dhseos09.asp?treg="+regno;	
+			alert('Please Check Your School Code');
+			document.getElementById("showres").innerHTML="";
+		}
+		
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+function stateChanged() 
+{ 
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+	{ 
+	document.getElementById("showres").innerHTML="";
+	document.getElementById("showres").innerHTML=xmlHttp.responseText
+	document.getElementById("ctrltr").style.display='none';
+	document.getElementById("lnktd").style.display='';
+	} 
+}  
+function enableCheckAnoRes()
+{
+	document.getElementById("ctrltr").style.display='';
+	document.getElementById("lnktd").style.display='none';
+	document.getElementById("showres").innerHTML="";
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+}
+function GetXmlHttpObject(handler)
+{ 
+	var objXMLHttp=null
+	if (window.XMLHttpRequest)
+	{
+	objXMLHttp=new XMLHttpRequest()
+	}
+	else if (window.ActiveXObject)
+	{
+	objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP")
+	}
+	return objXMLHttp
+}
+
+		</script>
+		<style> 
+	<!-- 		
+	 td {font-family:'Verdana';font-size:13px}
+	.hdg {font-family:'Verdana';background-color:#D6C58F;#dedede;#650d22; color:navy;font-weight:bold}	
+	.hdg1 {font-family:'Verdana';background:white;color:navy;font-weight:bold}
+	.hdg21 {font-family:'Verdana';background:white;color:navy;}
+	.rslt{font-family:'Verdana';background:white;#dedede;#e4dcc7;color:#660033;}
+	.mark2 {background:#f9f0d6;color:black;maroon;navy;}
+	.mark {background:#fbf4e3;#e4d8b6;color:black;maroon;navy;}
+	
+	a.hov:link { color: blue; text-decoration:none; }
+	a.hov:active { color: blue; text-decoration:none; }
+	a.hov:visited { color: #CC00CC; text-decoration:none; }
+	a.hov:hover { color: blue; text-decoration:none; }
+	a.lnkchkAno:link { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd}
+	a.lnkchkAno:active { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd }
+	a.lnkchkAno:visited { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd }
+	a.lnkchkAno:hover { color: #0000ff;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd}
+	-->
+	</style>
+	</head>
+	<body onload="initcon()" onfocus="setHeight()" xbottommargin="0" leftmargin="0" rightmargin="0" topmargin="5" xbgcolor="#eeeeee" background="DHSE%20SAY_IMP%20Examination%20Schoolwise%20Results%20-%202024_files/dhsepgbg2.gif">
+		<form name="fmhome" onsubmit="NavigateAjax(treg.value);return false;">
+			<table id="tblmain" align="center" bgcolor="#ffffff" xborder="0" style="COLOR:#660000;border:1px solid  #DFB67D" width="780px">
+				<tbody><tr xvalign="middle">
+					<td id="headtd" align="center" width="780px" xheight="90" background="DHSE%20SAY_IMP%20Examination%20Schoolwise%20Results%20-%202024_files/dhseftr.jpg" xbgcolor="#d8d4c9" height="104px">
+						<font style="color:#103852;font-size:20px;font-family:trebuchet ms">GOVERNMENT OF KERALA</font>
+						<br><font style="color:#630c21;font-size:20px;font-family:trebuchet ms"> Higher Secondary Examination </font>  
+                        <font style="color:#100c73;font-size:30px;font-weight:bold;font-family:trebuchet ms"> 2024</font><br><font style="font-size:14px">Higher Secondary SAY/IMP Schoolwise Results </font> 
+					</td>
+				</tr>
+				<tr align="center">
+					<td xheight="300">
+						<table align="center" border="0" style="WIDTH:100%">
+							<tbody><tr id="ctrltr" style="display: none;">
+								<td width="40%" align="right">
+									School Code
+								</td>
+								<td width="20%" align="center"><input type="text" name="treg" maxlength="5" style="FONT-WEIGHT: bold; FONT-SIZE: 12px; BORDER-LEFT-COLOR: #660000; BACKGROUND: #cdcdcd; BORDER-BOTTOM-COLOR: #660000; WIDTH: 60px; COLOR: #660000; BORDER-TOP-COLOR: #660000; FONT-FAMILY: verdana; TEXT-ALIGN: center; BORDER-RIGHT-COLOR: #660000" value="08075">
+								</td>
+								<td align="left"><input type="button" name="bsubmit" value="Submit" onclick="return NavigateAjax(treg.value)" style="BORDER-RIGHT:#305876 1px solid; BORDER-TOP:#305876 1px solid; FONT-WEIGHT:bold; BORDER-LEFT:#305876 1px solid; COLOR:#ffffff; BORDER-BOTTOM:#305876 1px solid; BACKGROUND-COLOR:#660000">&nbsp;
+									<input type="button" value=" Reset " name="breset" onclick="resetContents()" style="BORDER-RIGHT: #305876 1px solid; BORDER-TOP: #305876 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #305876 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #305876 1px solid; BACKGROUND-COLOR: #660000"></td>
+									<td align="center"><a href="https://keralaresults.nic.in/dhsesay24dpkv/dhsesay.htm" class="lnkchkAno">Individual Result</a></td>
+							</tr>
+							<tr id="lnktd" style="">
+								<td colspan="3" align="center"><a href="javascript:void enableCheckAnoRes()" class="lnkchkAno">&nbsp;&nbsp;CHECK 
+										ANOTHER SCHOOL RESULT&nbsp;&nbsp;</a></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td id="spantd" height="320" style="height: 320px;">
+						<span id="showres" valign="top" style="WIDTH: 100%; HEIGHT: 100%; BACKGROUND-COLOR: transparent; TEXT-ALIGN: center">
+<div align="center"><center>
+
+<table border="0" width="75%" cellspacing="1" cellpadding="3" align="center" style="border-right:1px solid #AF9441;BACKGROUND:#AF9441;#bad1e2" id="Table3">
+	<tbody><tr>
+    	<td colspan="16"><b>ST ALOSIOUS HSS,ELTHURUTH</b><br>While printing, set page layout to Landscape</td>
+    </tr>
+	<tr class="hdg">
+        <td>Roll No</td>
+        <td>Name</td>
+        <td>Group</td>
+        <td colspan="2">Subject-1</td>
+        <td colspan="2">Subject-2</td>
+        <td colspan="2">Subject-3</td>
+        <td colspan="2">Subject-4</td>
+        <td colspan="2">Subject-5</td>
+        <td colspan="2">Subject-6</td>
+        <td>Result</td>
+	</tr>
+	
+	
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180253</td>
+    	<td align="left">JOSHUA T JOSE                                     </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>85  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180256</td>
+    	<td align="left">NANDAKISHORE KOVATH                               </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>190 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180262</td>
+    	<td align="left">ADHITHYA K A                                      </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>174 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180264</td>
+    	<td align="left">ADITHYA.M.D                                       </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>139 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180280</td>
+    	<td align="left">C S MEERA NAMBEESAN                               </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>184 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180287</td>
+    	<td align="left">MALAVIKA. K. P                                    </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>117 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180291</td>
+    	<td align="left">NEHA DISAN                                        </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>160 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180298</td>
+    	<td align="left">SWATHIKA SANTHOSH                                 </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>144 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180308</td>
+    	<td align="left">DAWN BIJU                                         </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>184 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180318</td>
+    	<td align="left">ABINI SHRINE K B                                  </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>Ab  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180320</td>
+    	<td align="left">ALEENA VARGHESE                                   </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>142 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180321</td>
+    	<td align="left">ALEESHA K R                                       </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>Ab  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180323</td>
+    	<td align="left">ALNA JUSTIN                                       </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>Ab  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180326</td>
+    	<td align="left">ANANYA N R                                        </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>144 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180346</td>
+    	<td align="left">ELNA JOSE                                         </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>160 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180355</td>
+    	<td align="left">NIYA MARIA                                        </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>175 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180361</td>
+    	<td align="left">SAYANA MARIYA BIBIN                               </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>BIOLOGY</td><td><b>Ab  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180372</td>
+    	<td align="left">JAGAJITHKRISHNA MUKUNDAN                          </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>189 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180386</td>
+    	<td align="left">POURNAMY P S                                      </td>
+    	<td>SCIENCE        </td>
+    	<td>ENGLISH</td><td><b>Ab  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180410</td>
+    	<td align="left">ABLE SHANTO A                                     </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>154 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180433</td>
+    	<td align="left">ALLEN LAWRANCE                                    </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>111 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180444</td>
+    	<td align="left">GOWTHAM GOVIND G                                  </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>94  </b></td>
+    	<td>CHEMISTRY</td><td><b>104 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>MATHEMATICS-SCI</td><td><b>107 </b></td>
+    	<td align="left">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180456</td>
+    	<td align="left">RITHUKRISHNA M U                                  </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>150 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180470</td>
+    	<td align="left">AYUSH K R                                         </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>PHYSICS</td><td><b>129 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180478</td>
+    	<td align="left">ALFIYA BABU                                       </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>120 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180479</td>
+    	<td align="left">APARNA T P                                        </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>163 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180486</td>
+    	<td align="left">SANMARIYA SANU                                    </td>
+    	<td>SCIENCE        </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>CHEMISTRY</td><td><b>147 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180494</td>
+    	<td align="left">ASHLIN BABU                                       </td>
+    	<td>COMMERCE       </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>ECONOMICS </td><td><b>79  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180495</td>
+    	<td align="left">BHIMAL P BABY                                     </td>
+    	<td>COMMERCE       </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>ECONOMICS </td><td><b>79  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180496</td>
+    	<td align="left">EMMANUEL JAISON                                   </td>
+    	<td>COMMERCE       </td>
+    	<td>ENGLISH</td><td><b>180 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180510</td>
+    	<td align="left">THEJUS K S                                        </td>
+    	<td>COMMERCE       </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>108 </b></td>
+    	<td>ECONOMICS </td><td><b>79  </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left">NHS</td>
+    </tr>
+    
+	
+    <tr class="mark">
+    	<td style="font-weight:bold">23180519</td>
+    	<td align="left">GOPIKA T S                                        </td>
+    	<td>COMMERCE       </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>COMPUTER APPLICATION-COM</td><td><b>116 </b></td>
+    	<td align="left">EHS</td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    	<td style="font-weight:bold">23180538</td>
+    	<td align="left">MALAVIKA. P .S                                    </td>
+    	<td>COMMERCE       </td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td></td><td><b> </b></td>
+    	<td>ECONOMICS </td><td><b>123 </b></td>
+    	<td></td><td><b> </b></td>
+    	<td align="left"></td>
+    </tr>
+    
+	
+</tbody></table>
+<br>EHS: Eligible for Higher Studies, NHS: NOT Eligible for Higher Studies, RAL: Result Announced Later
+
+<br>
+</center>
+</div>
+</span>
+					</td>
+				</tr>
+				<tr>
+					<td id="footertd" align="center" height="70" background="DHSE%20SAY_IMP%20Examination%20Schoolwise%20Results%20-%202024_files/dhseftr.jpg" xbgcolor="#305876">For any result related queries click <a target="_blank" href="http://dhsekerala.gov.in/contacts.htm" class="hov" style="TEXT-DECORATION:none;xcolor:#5305876"> Here</a><br>
+						Data Provided By Directorate of Higher Secondary Education, Kerala.
+						<br>
+						IT Support by
+							National Informatics Centre, Kerala State Centre.<br>
+							<br>
+					<div style="font-face:verdana;font-size:11px;color:#660000;#0F3D6A;text-align:justify"><u>Disclaimer</u>:
+  Neither NIC nor Directorate of Higher Secondary Education is 
+responsible for any inadvertent error that may have crept in the results
+ being published on net. The results published on net are for immediate 
+information to the examinees.These cannot be treated as original mark 
+sheets. Original marksheets will be issued by the Directorate of Higher 
+Secondary Education separately. 
+					</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</form>
+	
+
+</body></html>
