@@ -1,0 +1,4036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0057)https://keralaresults.nic.in/dhsefy24spk13/swr_dhsefy.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>DHSE First Year Examination Schoolwise Results - 2024 </title>
+		
+		<script language="javascript">
+function initcon()
+{	newwin();
+	setHeight();
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+
+}
+function setHeight()
+{
+	if(screen.height == '600')
+	{
+		document.getElementById('headtd').height='100px';
+		document.getElementById('spantd').style.height='188px';
+		document.getElementById('tblmain').width='600px';
+	}
+	else
+	{
+		document.getElementById('headtd').height='104px';
+		document.getElementById('spantd').style.height='320px';
+		document.getElementById('tblmain').width='780px';
+	}
+}
+function newwin()
+{
+if (self != top) 
+top.location.href="swr_dhsefy.htm";
+}
+function IsNumeric(sText)
+{
+   var ValidChars = "0123456789";
+   var IsNumber=true;
+   var Char;
+
+ 
+   for (i = 0; i < sText.length && IsNumber == true; i++) 
+      { 
+      Char = sText.charAt(i); 
+      if (ValidChars.indexOf(Char) == -1) 
+         {
+         IsNumber = false;
+         }
+      }
+   return IsNumber;
+   
+ }
+
+
+
+function checkform()
+{
+  if(document.fmhome.treg.value == "")
+  {
+   	alert("Enter School Code");
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+   return false;
+  }
+  if(document.fmhome.treg.value.length < 5)
+  {
+    alert("Enter valid School Code");
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+	return false;
+  }
+  if(IsNumeric(document.fmhome.treg.value)==false)
+  {
+	alert("Please enter some valid School Code");
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+	return false;
+
+  }
+
+}
+
+function resetContents()
+{
+	document.fmhome.treg.value = "";
+	document.getElementById("showres").innerHTML='';
+}
+
+function NavigateAjax(regno)
+{
+	if(checkform() != false)
+	{
+		document.getElementById("showres").innerHTML="<table width='100%' ><tr><td align='center'><img src='atom01.gif' style='border:0px'/></table></tr></td>";
+		xmlHttp=GetXmlHttpObject()
+		if (xmlHttp==null)
+		{
+		alert ("Browser does not support HTTP Request")
+		return
+		} 
+		if(regno > 1000)
+		{
+			var url="swr_dhsefy.asp?treg="+regno;	
+			url=url+"&sid="+Math.random();
+			xmlHttp.onreadystatechange=stateChanged ;
+			xmlHttp.open("GET",url,true);
+			xmlHttp.send(null);
+		}
+		else
+		{
+			//var url="dhseos09.asp?treg="+regno;	
+			alert('Please Check Your School Code');
+			document.getElementById("showres").innerHTML="";
+		}
+		
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+function stateChanged() 
+{ 
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+	{ 
+	document.getElementById("showres").innerHTML="";
+	document.getElementById("showres").innerHTML=xmlHttp.responseText
+	document.getElementById("ctrltr").style.display='none';
+	document.getElementById("lnktd").style.display='';
+	} 
+}  
+function enableCheckAnoRes()
+{
+	document.getElementById("ctrltr").style.display='';
+	document.getElementById("lnktd").style.display='none';
+	document.getElementById("showres").innerHTML="";
+	document.fmhome.treg.value = "";
+	document.fmhome.treg.focus();
+}
+function GetXmlHttpObject(handler)
+{ 
+	var objXMLHttp=null
+	if (window.XMLHttpRequest)
+	{
+	objXMLHttp=new XMLHttpRequest()
+	}
+	else if (window.ActiveXObject)
+	{
+	objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP")
+	}
+	return objXMLHttp
+}
+
+		</script>
+		<style> 
+	<!-- 		
+	 td {font-family:'Verdana';font-size:13px}
+	.hdg {font-family:'Verdana';background-color:#D6C58F;#dedede;#650d22; color:navy;font-weight:bold}	
+	.hdg1 {font-family:'Verdana';background:white;color:navy;font-weight:bold}
+	.hdg21 {font-family:'Verdana';background:white;color:navy;}
+	.rslt{font-family:'Verdana';background:white;#dedede;#e4dcc7;color:#660033;}
+	.mark2 {background:#f9f0d6;color:black;maroon;navy;}
+	.mark {background:#fbf4e3;#e4d8b6;color:black;maroon;navy;}
+	
+	a.hov:link { color: blue; text-decoration:none; }
+	a.hov:active { color: blue; text-decoration:none; }
+	a.hov:visited { color: #CC00CC; text-decoration:none; }
+	a.hov:hover { color: blue; text-decoration:none; }
+	a.lnkchkAno:link { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd}
+	a.lnkchkAno:active { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd }
+	a.lnkchkAno:visited { color: #660000;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd }
+	a.lnkchkAno:hover { color: #0000ff;font-weight:bold;font-size:13px; font-family:verdana; text-decoration:none; background:#cdcdcd}
+	-->
+	</style>
+	</head>
+	<body onload="initcon()" onfocus="setHeight()" xbottommargin="0" leftmargin="0" rightmargin="0" topmargin="5" xbgcolor="#eeeeee" background="./DHSE First Year Examination Schoolwise Results - 2024_files/dhsepgbg2.gif">
+		<form name="fmhome" onsubmit="NavigateAjax(treg.value);return false;">
+			<table id="tblmain" align="center" bgcolor="#ffffff" xborder="0" style="COLOR:#660000;border:1px solid  #DFB67D" width="780px">
+				<tbody><tr xvalign="middle">
+					<td id="headtd" align="center" width="780px" xheight="90" background="./DHSE First Year Examination Schoolwise Results - 2024_files/dhseftr.jpg" xbgcolor="#d8d4c9" height="104px">
+						<font style="color:#103852;font-size:20px;font-family:trebuchet ms">GOVERNMENT OF KERALA</font>
+						<br><font style="color:#630c21;font-size:20px;font-family:trebuchet ms"> Higher Secondary Examination </font>  
+                        <font style="color:#100c73;font-size:25px;font-weight:bold;font-family:trebuchet ms"> 2024</font><br>
+                        <font style="font-size:14px">First Year Schoolwise Results </font> 
+					</td>
+				</tr>
+				<tr align="center">
+					<td xheight="300">
+						<table align="center" border="0" style="WIDTH:100%">
+							<tbody><tr id="ctrltr" style="display: none;">
+								<td width="40%" align="right">
+									School Code
+								</td>
+								<td width="20%" align="center"><input type="text" name="treg" maxlength="5" style="FONT-WEIGHT: bold; FONT-SIZE: 12px; BORDER-LEFT-COLOR: #660000; BACKGROUND: #cdcdcd; BORDER-BOTTOM-COLOR: #660000; WIDTH: 60px; COLOR: #660000; BORDER-TOP-COLOR: #660000; FONT-FAMILY: verdana; TEXT-ALIGN: center; BORDER-RIGHT-COLOR: #660000">
+								</td>
+								<td align="left"><input type="button" name="bsubmit" value="Submit" onclick="return NavigateAjax(treg.value)" style="BORDER-RIGHT:#305876 1px solid; BORDER-TOP:#305876 1px solid; FONT-WEIGHT:bold; BORDER-LEFT:#305876 1px solid; COLOR:#ffffff; BORDER-BOTTOM:#305876 1px solid; BACKGROUND-COLOR:#660000">&nbsp;
+									<input type="button" value=" Reset " name="breset" onclick="resetContents()" style="BORDER-RIGHT: #305876 1px solid; BORDER-TOP: #305876 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #305876 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #305876 1px solid; BACKGROUND-COLOR: #660000"></td>
+									<td align="center"><a href="https://keralaresults.nic.in/dhsefy24spk13/dhsefy.htm" class="lnkchkAno">Individual Result</a></td>
+							</tr>
+							<tr id="lnktd" style="">
+								<td colspan="3" align="center"><a href="javascript:void enableCheckAnoRes()" class="lnkchkAno">&nbsp;&nbsp;CHECK 
+										ANOTHER SCHOOL RESULT&nbsp;&nbsp;</a></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td id="spantd" height="320" style="height: 320px;">
+						<span id="showres" valign="top" style="WIDTH: 100%; HEIGHT: 100%; BACKGROUND-COLOR: transparent; TEXT-ALIGN: center">
+<div align="center"><center>
+
+<table border="0" width="75%" cellspacing="1" cellpadding="3" align="center" style="border-right:1px solid #AF9441;BACKGROUND:#AF9441;#bad1e2" id="Table3">
+	<tbody><tr><td colspan="16">School Code : <b>08075</b><br>While printing, set page layout to Landscape</td></tr>
+	<tr class="hdg">
+<td>Roll No</td>
+<td>Name</td>
+<td>Group</td>
+<td colspan="2">Subject-1</td>
+<td colspan="2">Subject-2</td>
+<td colspan="2">Subject-3</td>
+<td colspan="2">Subject-4</td>
+<td colspan="2">Subject-5</td>
+<td colspan="2">Subject-6</td>
+</tr>
+
+	
+	
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174474</td>
+    <td align="left">ADITH SEBASTIAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>98     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174475</td>
+    <td align="left">ALFIN SHIJO                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>BIOLOGY</td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174476</td>
+    <td align="left">AMAL VINCENT                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>64     </b></td>
+    <td>CHEMISTRY</td><td><b>59     </b></td>
+    <td>BIOLOGY</td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>55     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174477</td>
+    <td align="left">ANNLEO BIJU                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>73     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>62     </b></td>
+    <td>CHEMISTRY</td><td><b>67     </b></td>
+    <td>BIOLOGY</td><td><b>52     </b></td>
+    <td>MATHEMATICS</td><td><b>51     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174478</td>
+    <td align="left">ANNUAY MADHAV K A                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174479</td>
+    <td align="left">ANSON T. JAISON                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>100    </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>70     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>BIOLOGY</td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>67     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174480</td>
+    <td align="left">ARON RAKESH THARAYIL                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>MALAYALAM </td><td><b>77     </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>BIOLOGY</td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>53     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174481</td>
+    <td align="left">AYIN REJI                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174482</td>
+    <td align="left">BENETTO V MANOJ                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>BIOLOGY</td><td><b>67     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174483</td>
+    <td align="left">C J REJIN                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>62     </b></td>
+    <td>MALAYALAM </td><td><b>90     </b></td>
+    <td>PHYSICS</td><td><b>41     </b></td>
+    <td>CHEMISTRY</td><td><b>44     </b></td>
+    <td>BIOLOGY</td><td><b>47     </b></td>
+    <td>MATHEMATICS</td><td><b>42     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174484</td>
+    <td align="left">CHRISTO SHAJAN                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174485</td>
+    <td align="left">DELMIN TONY                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>66     </b></td>
+    <td>MALAYALAM </td><td><b>90     </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>60     </b></td>
+    <td>BIOLOGY</td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>48     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174486</td>
+    <td align="left">EMMANUEL BIJI PAUL                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>53     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>70     </b></td>
+    <td>BIOLOGY</td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174487</td>
+    <td align="left">NAVANEETH P. S                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>65     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>70     </b></td>
+    <td>BIOLOGY</td><td><b>68     </b></td>
+    <td>MATHEMATICS</td><td><b>71     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174488</td>
+    <td align="left">PRAJUL K JIJO                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>59     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>35     </b></td>
+    <td>CHEMISTRY</td><td><b>45     </b></td>
+    <td>BIOLOGY</td><td><b>40     </b></td>
+    <td>MATHEMATICS</td><td><b>26     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174489</td>
+    <td align="left">ROHAN SIJO                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>96     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174490</td>
+    <td align="left">RONITH ROY                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>MALAYALAM </td><td><b>90     </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174491</td>
+    <td align="left">SAVIO K SHIBU                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>44     </b></td>
+    <td>CHEMISTRY</td><td><b>70     </b></td>
+    <td>BIOLOGY</td><td><b>57     </b></td>
+    <td>MATHEMATICS</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174492</td>
+    <td align="left">ABHIYA FRANCIS                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>67     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>60     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>47     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174493</td>
+    <td align="left">AGNA ROSE K S                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>BIOLOGY</td><td><b>65     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174494</td>
+    <td align="left">AHI JEO                                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>BIOLOGY</td><td><b>59     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174495</td>
+    <td align="left">AISWARYA JIMMY                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>65     </b></td>
+    <td>BIOLOGY</td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174496</td>
+    <td align="left">ALNA JOSEPH                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174497</td>
+    <td align="left">ALNA M. JOSEPH                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>75     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>50     </b></td>
+    <td>CHEMISTRY</td><td><b>52     </b></td>
+    <td>BIOLOGY</td><td><b>43     </b></td>
+    <td>MATHEMATICS</td><td><b>43     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174498</td>
+    <td align="left">ALNA P S                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>71     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>74     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>58     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174499</td>
+    <td align="left">ALONA ROSE SUNNY                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>70     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>BIOLOGY</td><td><b>53     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174500</td>
+    <td align="left">ALVEENA C S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>68     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174501</td>
+    <td align="left">AMRITHA C R                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174502</td>
+    <td align="left">AMRITHA GOURI K S                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>49     </b></td>
+    <td>CHEMISTRY</td><td><b>64     </b></td>
+    <td>BIOLOGY</td><td><b>45     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174503</td>
+    <td align="left">ANAGHA P S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>97     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174504</td>
+    <td align="left">ANAMIKA C MANAVAN                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>68     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174505</td>
+    <td align="left">ANAT SONY                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>92     </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>42     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174506</td>
+    <td align="left">ANGEL K JOJU                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>69     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>65     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174507</td>
+    <td align="left">ANITTA C V                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>68     </b></td>
+    <td>CHEMISTRY</td><td><b>67     </b></td>
+    <td>BIOLOGY</td><td><b>53     </b></td>
+    <td>MATHEMATICS</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174508</td>
+    <td align="left">ANLIT VARGHESE                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>99     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174509</td>
+    <td align="left">ANNA ROSE C. J.                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>67     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>62     </b></td>
+    <td>CHEMISTRY</td><td><b>64     </b></td>
+    <td>BIOLOGY</td><td><b>49     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174510</td>
+    <td align="left">ANUGRAHA GEORGE C                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>78     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>59     </b></td>
+    <td>CHEMISTRY</td><td><b>53     </b></td>
+    <td>BIOLOGY</td><td><b>46     </b></td>
+    <td>MATHEMATICS</td><td><b>55     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174511</td>
+    <td align="left">ANULAKSHMI V V                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>75     </b></td>
+    <td>BIOLOGY</td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174512</td>
+    <td align="left">ARYA SURESH                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>51     </b></td>
+    <td>CHEMISTRY</td><td><b>53     </b></td>
+    <td>BIOLOGY</td><td><b>35     </b></td>
+    <td>MATHEMATICS</td><td><b>61     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174513</td>
+    <td align="left">BENCY B B                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174514</td>
+    <td align="left">BRINTA ROY                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>68     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>BIOLOGY</td><td><b>49     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174515</td>
+    <td align="left">DHANIKA C J                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174516</td>
+    <td align="left">DIYA ROSE SHYJAN                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>73     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174517</td>
+    <td align="left">EZA A S                                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>63     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>BIOLOGY</td><td><b>59     </b></td>
+    <td>MATHEMATICS</td><td><b>65     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174518</td>
+    <td align="left">FATHIMA RINSHA A S                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>64     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174519</td>
+    <td align="left">HANNA V S                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>60     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174520</td>
+    <td align="left">HENNA K JOJU                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174521</td>
+    <td align="left">JEES MARIYA MARTIN                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174522</td>
+    <td align="left">JENIT CHACKO                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174523</td>
+    <td align="left">JIYA JOMY                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174524</td>
+    <td align="left">LAKSHMI THEERTHA E D                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>54     </b></td>
+    <td>MATHEMATICS</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174525</td>
+    <td align="left">LENA MARIA DIXON                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>68     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174526</td>
+    <td align="left">MINSA ROSE MARTIN                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174527</td>
+    <td align="left">NANDHANA A T                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>74     </b></td>
+    <td>CHEMISTRY</td><td><b>70     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174528</td>
+    <td align="left">NIRANJANA K P                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174529</td>
+    <td align="left">RACHEL ROSE JOMY C                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>69     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174530</td>
+    <td align="left">ROSE JOSEPH                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>99     </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>69     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174531</td>
+    <td align="left">SAHLA M M                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>74     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174532</td>
+    <td align="left">SONA OUSEPH                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>74     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>67     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174533</td>
+    <td align="left">SREENANDA V B                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>46     </b></td>
+    <td>CHEMISTRY</td><td><b>47     </b></td>
+    <td>BIOLOGY</td><td><b>39     </b></td>
+    <td>MATHEMATICS</td><td><b>49     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174534</td>
+    <td align="left">ABHINAV K SANTHOSH                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>67     </b></td>
+    <td>CHEMISTRY</td><td><b>64     </b></td>
+    <td>BIOLOGY</td><td><b>41     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174535</td>
+    <td align="left">AKSHAY V S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>62     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>PHYSICS</td><td><b>45     </b></td>
+    <td>CHEMISTRY</td><td><b>42     </b></td>
+    <td>BIOLOGY</td><td><b>35     </b></td>
+    <td>MATHEMATICS</td><td><b>44     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174536</td>
+    <td align="left">ALAN SHANIL                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>76     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>43     </b></td>
+    <td>CHEMISTRY</td><td><b>38     </b></td>
+    <td>BIOLOGY</td><td><b>33     </b></td>
+    <td>MATHEMATICS</td><td><b>33     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174537</td>
+    <td align="left">ALEX ANTO ALAPPAT                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>68     </b></td>
+    <td>CHEMISTRY</td><td><b>65     </b></td>
+    <td>BIOLOGY</td><td><b>69     </b></td>
+    <td>MATHEMATICS</td><td><b>59     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174538</td>
+    <td align="left">AMAL J PULIKKOTTIL                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174539</td>
+    <td align="left">ANLEON ANTO                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>58     </b></td>
+    <td>CHEMISTRY</td><td><b>60     </b></td>
+    <td>BIOLOGY</td><td><b>45     </b></td>
+    <td>MATHEMATICS</td><td><b>56     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174540</td>
+    <td align="left">AUSTIN MARTIN K                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174541</td>
+    <td align="left">DHANUSH P J                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>67     </b></td>
+    <td>BIOLOGY</td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174542</td>
+    <td align="left">GABRIEL BASIL JOHN                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>67     </b></td>
+    <td>CHEMISTRY</td><td><b>64     </b></td>
+    <td>BIOLOGY</td><td><b>57     </b></td>
+    <td>MATHEMATICS</td><td><b>58     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174543</td>
+    <td align="left">HIRON C. J                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>75     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>56     </b></td>
+    <td>CHEMISTRY</td><td><b>55     </b></td>
+    <td>BIOLOGY</td><td><b>43     </b></td>
+    <td>MATHEMATICS</td><td><b>58     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174544</td>
+    <td align="left">JEES KUTTUKKARAN                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>71     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>46     </b></td>
+    <td>CHEMISTRY</td><td><b>49     </b></td>
+    <td>BIOLOGY</td><td><b>42     </b></td>
+    <td>MATHEMATICS</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174545</td>
+    <td align="left">JEEVAN RAJU CHANGARANGATH                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>51     </b></td>
+    <td>CHEMISTRY</td><td><b>57     </b></td>
+    <td>BIOLOGY</td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>57     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174546</td>
+    <td align="left">PAVAN SALESH                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>67     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174547</td>
+    <td align="left">PRANAV K P                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>67     </b></td>
+    <td>CHEMISTRY</td><td><b>65     </b></td>
+    <td>BIOLOGY</td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174548</td>
+    <td align="left">RONITH P J                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>74     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>58     </b></td>
+    <td>MATHEMATICS</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174549</td>
+    <td align="left">SREERAG.P                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>62     </b></td>
+    <td>CHEMISTRY</td><td><b>59     </b></td>
+    <td>BIOLOGY</td><td><b>54     </b></td>
+    <td>MATHEMATICS</td><td><b>50     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174550</td>
+    <td align="left">THEJUS SANTHOSH                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>71     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174551</td>
+    <td align="left">ABALONA JOSE                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>88     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174552</td>
+    <td align="left">ABHIRAMI K M                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174553</td>
+    <td align="left">ALSTIYA A S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>96     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174554</td>
+    <td align="left">AMRITHA PRADEEP                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174555</td>
+    <td align="left">ANALA BABU                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174556</td>
+    <td align="left">ANEETA TIXON                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>52     </b></td>
+    <td>BIOLOGY</td><td><b>48     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174557</td>
+    <td align="left">ANITTA JOJO                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>60     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>BIOLOGY</td><td><b>36     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174558</td>
+    <td align="left">ANN ROSE JOSAN                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>71     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>BIOLOGY</td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174559</td>
+    <td align="left">ARDHRA O C                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>97     </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174560</td>
+    <td align="left">BENITTA PAUL                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>74     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>67     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174561</td>
+    <td align="left">C S ANVIA THANKU                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>64     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>BIOLOGY</td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>75     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174562</td>
+    <td align="left">CHRISTEENA SKARIA                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>BIOLOGY</td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174563</td>
+    <td align="left">ESA ROSE V V                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>71     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>54     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174564</td>
+    <td align="left">FEBILIN PAUL                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174565</td>
+    <td align="left">GAYATHRY K                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174566</td>
+    <td align="left">GOURI N SATHEESH                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>75     </b></td>
+    <td>BIOLOGY</td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>61     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174567</td>
+    <td align="left">GOURI NANDHA T S                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>96     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174568</td>
+    <td align="left">HEAVENLY G THARAKAN                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>50     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>BIOLOGY</td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>41     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174569</td>
+    <td align="left">JOVIAL TRESA ALAPPAT                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174570</td>
+    <td align="left">KRIPA SANTHOSH                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174571</td>
+    <td align="left">KRISHNAPRIYA V. K.                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>Absent </b></td>
+    <td>HINDI</td><td><b>Absent </b></td>
+    <td>PHYSICS</td><td><b>Absent </b></td>
+    <td>CHEMISTRY</td><td><b>Absent </b></td>
+    <td>BIOLOGY</td><td><b>Absent </b></td>
+    <td>MATHEMATICS</td><td><b>Absent </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174572</td>
+    <td align="left">KRUPA K MENON                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>60     </b></td>
+    <td>BIOLOGY</td><td><b>54     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174573</td>
+    <td align="left">LAKSHMI KRISHNA T S                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>67     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>BIOLOGY</td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174574</td>
+    <td align="left">MANJIMA MANOJ                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>BIOLOGY</td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174575</td>
+    <td align="left">MARY CATHERIN VARGHESE                                                                              </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>67     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174576</td>
+    <td align="left">NANDITHA K S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>67     </b></td>
+    <td>BIOLOGY</td><td><b>59     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174577</td>
+    <td align="left">NAYANA SUBASH M                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>BIOLOGY</td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174578</td>
+    <td align="left">NEELAMBARI C S                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>74     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174579</td>
+    <td align="left">NEHEMIYA JACKSON                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>67     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174580</td>
+    <td align="left">NIVEDYA NAVOJ                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>65     </b></td>
+    <td>MATHEMATICS</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174581</td>
+    <td align="left">POOJA PRAVEEN                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>BIOLOGY</td><td><b>61     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174582</td>
+    <td align="left">PRIYANANDA P P                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>BIOLOGY</td><td><b>67     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174583</td>
+    <td align="left">RAGASREE N R                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>97     </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>54     </b></td>
+    <td>BIOLOGY</td><td><b>50     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174584</td>
+    <td align="left">REEN CHARLY T                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>BIOLOGY</td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174585</td>
+    <td align="left">RENJIMA RAVINDRAN                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174586</td>
+    <td align="left">RHITHIKA PREEJITH MENON                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174587</td>
+    <td align="left">SAMANIAYA SAJAN                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174588</td>
+    <td align="left">SANJANA P M                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>96     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>BIOLOGY</td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174589</td>
+    <td align="left">SHARON ROSE ROBINSON                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174590</td>
+    <td align="left">SHIVANANDA K U                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>BIOLOGY</td><td><b>65     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174591</td>
+    <td align="left">SREELAKSHMI V S                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>BIOLOGY</td><td><b>48     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174592</td>
+    <td align="left">THRISHA V S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>BIOLOGY</td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174593</td>
+    <td align="left">VAIGA. M. B.                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>HINDI</td><td><b>97     </b></td>
+    <td>PHYSICS</td><td><b>51     </b></td>
+    <td>CHEMISTRY</td><td><b>56     </b></td>
+    <td>BIOLOGY</td><td><b>47     </b></td>
+    <td>MATHEMATICS</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174594</td>
+    <td align="left">ABLE JAISE C                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174595</td>
+    <td align="left">AIBEL BEJOY                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174596</td>
+    <td align="left">ALJO SHAJI P                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>58     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>71     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174597</td>
+    <td align="left">BEVAN BIJU N                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174598</td>
+    <td align="left">ELVIN JAMES                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>76     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>69     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>71     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174599</td>
+    <td align="left">FEDRIC  A JOSEPH                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174600</td>
+    <td align="left">GODWIN FRANCIS K                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>79     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174601</td>
+    <td align="left">GOUTHAM C NAIR                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>63     </b></td>
+    <td>CHEMISTRY</td><td><b>61     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174602</td>
+    <td align="left">JOEL C J                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174603</td>
+    <td align="left">JOSWIN DAVIS                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>78     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174604</td>
+    <td align="left">JUSTIN BABU K                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174605</td>
+    <td align="left">MADHAV P                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>MALAYALAM </td><td><b>92     </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174606</td>
+    <td align="left">SAMPREET R EDAKKALATHUR                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174607</td>
+    <td align="left">SANOOSH KRISHNA K U                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>76     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>67     </b></td>
+    <td>CHEMISTRY</td><td><b>58     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174608</td>
+    <td align="left">SHIVIN VINSON                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174609</td>
+    <td align="left">SREEGOVIND P                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>91     </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174610</td>
+    <td align="left">ANCHALA ROSE THATTIL                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174611</td>
+    <td align="left">ARCHANA RAMACHANDRAN                                                                                </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>76     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174612</td>
+    <td align="left">BENITTA JAISON                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174613</td>
+    <td align="left">CHRISTY MARIYA BABU                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>61     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>73     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174614</td>
+    <td align="left">DIYA SUNIL                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>54     </b></td>
+    <td>CHEMISTRY</td><td><b>67     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174615</td>
+    <td align="left">NITHYA MARIA V L                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>52     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174616</td>
+    <td align="left">ROSHNY CELIN ROY                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174617</td>
+    <td align="left">ABEL XAVI                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>75     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174618</td>
+    <td align="left">ABHINAND C VARGHESE                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174619</td>
+    <td align="left">ABHINAV BAIJU                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>88     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174620</td>
+    <td align="left">ADHARSH C                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>88     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>71     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174621</td>
+    <td align="left">ADHWAIDH INNARAN RAKHESH                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174622</td>
+    <td align="left">AGNEL JOBY K                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174623</td>
+    <td align="left">AMRUTHSAGAR SARMAN                                                                                  </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174624</td>
+    <td align="left">ANAY KRISHNA K S                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>74     </b></td>
+    <td>HINDI</td><td><b>97     </b></td>
+    <td>PHYSICS</td><td><b>34     </b></td>
+    <td>CHEMISTRY</td><td><b>28     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>43     </b></td>
+    <td>MATHEMATICS</td><td><b>27     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174625</td>
+    <td align="left">ANGELO SOJAN PADIKKALA                                                                              </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>74     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>61     </b></td>
+    <td>CHEMISTRY</td><td><b>71     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174626</td>
+    <td align="left">ANTONY JIJU                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>60     </b></td>
+    <td>CHEMISTRY</td><td><b>75     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174627</td>
+    <td align="left">ASHWIN N A                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174628</td>
+    <td align="left">ASWIN JACOB                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>68     </b></td>
+    <td>CHEMISTRY</td><td><b>69     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174629</td>
+    <td align="left">BLESSON DAVIS                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>HINDI</td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174630</td>
+    <td align="left">CHRIS PAUL TONY                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>70     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174631</td>
+    <td align="left">DEEPAK PREMAN                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>67     </b></td>
+    <td>HINDI</td><td><b>86     </b></td>
+    <td>PHYSICS</td><td><b>44     </b></td>
+    <td>CHEMISTRY</td><td><b>40     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>50     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174632</td>
+    <td align="left">DHANANJAY E S                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>PHYSICS</td><td><b>45     </b></td>
+    <td>CHEMISTRY</td><td><b>53     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>51     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174633</td>
+    <td align="left">EBY T V                                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>93     </b></td>
+    <td>PHYSICS</td><td><b>53     </b></td>
+    <td>CHEMISTRY</td><td><b>63     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>55     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174634</td>
+    <td align="left">GOKUL KRISHNA.E                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174635</td>
+    <td align="left">HRISHIK E J                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>56     </b></td>
+    <td>CHEMISTRY</td><td><b>62     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>67     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174636</td>
+    <td align="left">JOEL JOMON                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>79     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>48     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>46     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174637</td>
+    <td align="left">JOYLIN SANTHOSH C                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>76     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174638</td>
+    <td align="left">KAUSHIK K AJITH                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174639</td>
+    <td align="left">MANU C MANOJ                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>77     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>78     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174640</td>
+    <td align="left">MANUEL YESUDAS                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>92     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>56     </b></td>
+    <td>CHEMISTRY</td><td><b>63     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>58     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174641</td>
+    <td align="left">MEBIN BABU                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174642</td>
+    <td align="left">MELWIN P B                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>75     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174643</td>
+    <td align="left">NARENDRANATH P S                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>70     </b></td>
+    <td>HINDI</td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>42     </b></td>
+    <td>CHEMISTRY</td><td><b>59     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>47     </b></td>
+    <td>MATHEMATICS</td><td><b>50     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174644</td>
+    <td align="left">SANJAY P S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>95     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174645</td>
+    <td align="left">SREERAG. K. S                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>63     </b></td>
+    <td>CHEMISTRY</td><td><b>63     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174646</td>
+    <td align="left">VINAYAK K                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>76     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>70     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174647</td>
+    <td align="left">ANAGHA P S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>58     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>65     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174648</td>
+    <td align="left">ANJANA JOSE                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>73     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174649</td>
+    <td align="left">ANN AUSTIN                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>78     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174650</td>
+    <td align="left">ATHIRA K S                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174651</td>
+    <td align="left">NAYANA MANOJ                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>72     </b></td>
+    <td>HINDI</td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>47     </b></td>
+    <td>CHEMISTRY</td><td><b>44     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>61     </b></td>
+    <td>MATHEMATICS</td><td><b>50     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174652</td>
+    <td align="left">SANIYA JOY                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>64     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174653</td>
+    <td align="left">TREASA BINU                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>70     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>COMPUTER SCIENCE </td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174654</td>
+    <td align="left">ABHINAV ANILKUMAR                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>74     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>60     </b></td>
+    <td>CHEMISTRY</td><td><b>44     </b></td>
+    <td>ELECTRONICS </td><td><b>59     </b></td>
+    <td>MATHEMATICS</td><td><b>61     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174655</td>
+    <td align="left">ABHINAV C S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>97     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>ELECTRONICS </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174656</td>
+    <td align="left">ABIL JOSEPH C S                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>70     </b></td>
+    <td>MALAYALAM </td><td><b>80     </b></td>
+    <td>PHYSICS</td><td><b>55     </b></td>
+    <td>CHEMISTRY</td><td><b>65     </b></td>
+    <td>ELECTRONICS </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174657</td>
+    <td align="left">ABIN ANTO                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>54     </b></td>
+    <td>CHEMISTRY</td><td><b>62     </b></td>
+    <td>ELECTRONICS </td><td><b>73     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174658</td>
+    <td align="left">ALAN BIJU                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>MALAYALAM </td><td><b>81     </b></td>
+    <td>PHYSICS</td><td><b>62     </b></td>
+    <td>CHEMISTRY</td><td><b>56     </b></td>
+    <td>ELECTRONICS </td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>52     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174659</td>
+    <td align="left">ALDRIN BENNY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>58     </b></td>
+    <td>CHEMISTRY</td><td><b>59     </b></td>
+    <td>ELECTRONICS </td><td><b>70     </b></td>
+    <td>MATHEMATICS</td><td><b>55     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174660</td>
+    <td align="left">AMAL CHRISTY JOSEPH                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>70     </b></td>
+    <td>MALAYALAM </td><td><b>90     </b></td>
+    <td>PHYSICS</td><td><b>47     </b></td>
+    <td>CHEMISTRY</td><td><b>51     </b></td>
+    <td>ELECTRONICS </td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174661</td>
+    <td align="left">ANLIN BABU                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>48     </b></td>
+    <td>CHEMISTRY</td><td><b>57     </b></td>
+    <td>ELECTRONICS </td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>52     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174662</td>
+    <td align="left">BIZTOM BAIJU                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>ELECTRONICS </td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174663</td>
+    <td align="left">BLESTIN SHAJU                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>97     </b></td>
+    <td>PHYSICS</td><td><b>61     </b></td>
+    <td>CHEMISTRY</td><td><b>70     </b></td>
+    <td>ELECTRONICS </td><td><b>73     </b></td>
+    <td>MATHEMATICS</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174664</td>
+    <td align="left">CLEMENT BIJU                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>73     </b></td>
+    <td>MALAYALAM </td><td><b>64     </b></td>
+    <td>PHYSICS</td><td><b>52     </b></td>
+    <td>CHEMISTRY</td><td><b>53     </b></td>
+    <td>ELECTRONICS </td><td><b>43     </b></td>
+    <td>MATHEMATICS</td><td><b>46     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174665</td>
+    <td align="left">EVIN FRANCIS                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>78     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>75     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>ELECTRONICS </td><td><b>75     </b></td>
+    <td>MATHEMATICS</td><td><b>57     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174666</td>
+    <td align="left">FELIX FRANCIS                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>63     </b></td>
+    <td>CHEMISTRY</td><td><b>67     </b></td>
+    <td>ELECTRONICS </td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>61     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174667</td>
+    <td align="left">FIRON C.F                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>60     </b></td>
+    <td>PHYSICS</td><td><b>58     </b></td>
+    <td>CHEMISTRY</td><td><b>62     </b></td>
+    <td>ELECTRONICS </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>56     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174668</td>
+    <td align="left">GODWIN P JEEJO                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>MALAYALAM </td><td><b>90     </b></td>
+    <td>PHYSICS</td><td><b>52     </b></td>
+    <td>CHEMISTRY</td><td><b>61     </b></td>
+    <td>ELECTRONICS </td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>55     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174669</td>
+    <td align="left">HERON BASTIAN V                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>96     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>ELECTRONICS </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174670</td>
+    <td align="left">ISAHACK SABU                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>49     </b></td>
+    <td>CHEMISTRY</td><td><b>52     </b></td>
+    <td>ELECTRONICS </td><td><b>48     </b></td>
+    <td>MATHEMATICS</td><td><b>42     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174671</td>
+    <td align="left">JOE BENADICT AIJO                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>74     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>56     </b></td>
+    <td>CHEMISTRY</td><td><b>69     </b></td>
+    <td>ELECTRONICS </td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>59     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174672</td>
+    <td align="left">JOEL T JOY VARGHESE                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>97     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>ELECTRONICS </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174673</td>
+    <td align="left">KARTHIK E S                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>63     </b></td>
+    <td>CHEMISTRY</td><td><b>64     </b></td>
+    <td>ELECTRONICS </td><td><b>63     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174674</td>
+    <td align="left">MUHAMED JASEEL M                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>50     </b></td>
+    <td>MALAYALAM </td><td><b>60     </b></td>
+    <td>PHYSICS</td><td><b>38     </b></td>
+    <td>CHEMISTRY</td><td><b>44     </b></td>
+    <td>ELECTRONICS </td><td><b>49     </b></td>
+    <td>MATHEMATICS</td><td><b>40     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174675</td>
+    <td align="left">P. S. VIJAY SINGH                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>ELECTRONICS </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174676</td>
+    <td align="left">RUDRAKSH C S                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>MALAYALAM </td><td><b>88     </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>ELECTRONICS </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>57     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174677</td>
+    <td align="left">SAM SHAJAN                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>98     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>ELECTRONICS </td><td><b>76     </b></td>
+    <td>MATHEMATICS</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174678</td>
+    <td align="left">SEO ROY                                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>MALAYALAM </td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>69     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>ELECTRONICS </td><td><b>69     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174679</td>
+    <td align="left">SHINE K J                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>55     </b></td>
+    <td>MALAYALAM </td><td><b>76     </b></td>
+    <td>PHYSICS</td><td><b>33     </b></td>
+    <td>CHEMISTRY</td><td><b>33     </b></td>
+    <td>ELECTRONICS </td><td><b>44     </b></td>
+    <td>MATHEMATICS</td><td><b>29     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174680</td>
+    <td align="left">SONU P N                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>72     </b></td>
+    <td>MALAYALAM </td><td><b>81     </b></td>
+    <td>PHYSICS</td><td><b>49     </b></td>
+    <td>CHEMISTRY</td><td><b>48     </b></td>
+    <td>ELECTRONICS </td><td><b>68     </b></td>
+    <td>MATHEMATICS</td><td><b>40     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174681</td>
+    <td align="left">THOMSWIN JOSHI                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>93     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>45     </b></td>
+    <td>CHEMISTRY</td><td><b>52     </b></td>
+    <td>ELECTRONICS </td><td><b>53     </b></td>
+    <td>MATHEMATICS</td><td><b>31     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174682</td>
+    <td align="left">VIBEESH C B                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>48     </b></td>
+    <td>MALAYALAM </td><td><b>74     </b></td>
+    <td>PHYSICS</td><td><b>28     </b></td>
+    <td>CHEMISTRY</td><td><b>33     </b></td>
+    <td>ELECTRONICS </td><td><b>50     </b></td>
+    <td>MATHEMATICS</td><td><b>25     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174683</td>
+    <td align="left">VIVEK P B                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>77     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>ELECTRONICS </td><td><b>71     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174684</td>
+    <td align="left">ANN RACHEL ALEX                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>MALAYALAM </td><td><b>91     </b></td>
+    <td>PHYSICS</td><td><b>46     </b></td>
+    <td>CHEMISTRY</td><td><b>45     </b></td>
+    <td>ELECTRONICS </td><td><b>49     </b></td>
+    <td>MATHEMATICS</td><td><b>38     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174685</td>
+    <td align="left">ELNA ROSE PAUL                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>71     </b></td>
+    <td>ELECTRONICS </td><td><b>73     </b></td>
+    <td>MATHEMATICS</td><td><b>61     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174686</td>
+    <td align="left">MAUREEN THERESE SHAIJAN                                                                             </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>MALAYALAM </td><td><b>91     </b></td>
+    <td>PHYSICS</td><td><b>59     </b></td>
+    <td>CHEMISTRY</td><td><b>60     </b></td>
+    <td>ELECTRONICS </td><td><b>58     </b></td>
+    <td>MATHEMATICS</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174687</td>
+    <td align="left">ABHAY KRISHNA A V                                                                                   </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>75     </b></td>
+    <td>HINDI</td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>66     </b></td>
+    <td>ELECTRONICS </td><td><b>62     </b></td>
+    <td>MATHEMATICS</td><td><b>59     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174688</td>
+    <td align="left">ABHINAV JOBY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>79     </b></td>
+    <td>ELECTRONICS </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174689</td>
+    <td align="left">ABHINAV KRISHNA T S                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>98     </b></td>
+    <td>HINDI</td><td><b>98     </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>78     </b></td>
+    <td>ELECTRONICS </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174690</td>
+    <td align="left">ADHITHYAN K R                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>70     </b></td>
+    <td>HINDI</td><td><b>79     </b></td>
+    <td>PHYSICS</td><td><b>32     </b></td>
+    <td>CHEMISTRY</td><td><b>32     </b></td>
+    <td>ELECTRONICS </td><td><b>57     </b></td>
+    <td>MATHEMATICS</td><td><b>38     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174691</td>
+    <td align="left">AIDEN ANTON                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>79     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>ELECTRONICS </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174692</td>
+    <td align="left">ALAN PALAMUTTAM THOMAS                                                                              </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>78     </b></td>
+    <td>HINDI</td><td><b>92     </b></td>
+    <td>PHYSICS</td><td><b>48     </b></td>
+    <td>CHEMISTRY</td><td><b>52     </b></td>
+    <td>ELECTRONICS </td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>48     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174693</td>
+    <td align="left">ARAVIND G VINOD                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>96     </b></td>
+    <td>PHYSICS</td><td><b>68     </b></td>
+    <td>CHEMISTRY</td><td><b>74     </b></td>
+    <td>ELECTRONICS </td><td><b>68     </b></td>
+    <td>MATHEMATICS</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174694</td>
+    <td align="left">ARUN POLY                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>47     </b></td>
+    <td>CHEMISTRY</td><td><b>57     </b></td>
+    <td>ELECTRONICS </td><td><b>74     </b></td>
+    <td>MATHEMATICS</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174695</td>
+    <td align="left">ASHWIN PAULSON                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>88     </b></td>
+    <td>HINDI</td><td><b>97     </b></td>
+    <td>PHYSICS</td><td><b>60     </b></td>
+    <td>CHEMISTRY</td><td><b>60     </b></td>
+    <td>ELECTRONICS </td><td><b>66     </b></td>
+    <td>MATHEMATICS</td><td><b>46     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174696</td>
+    <td align="left">ATHUL BABU M                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>46     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>ELECTRONICS </td><td><b>61     </b></td>
+    <td>MATHEMATICS</td><td><b>51     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174697</td>
+    <td align="left">BARDIN PAULY                                                                                        </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>93     </b></td>
+    <td>PHYSICS</td><td><b>40     </b></td>
+    <td>CHEMISTRY</td><td><b>49     </b></td>
+    <td>ELECTRONICS </td><td><b>54     </b></td>
+    <td>MATHEMATICS</td><td><b>41     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174698</td>
+    <td align="left">EDWIN RAJU                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>89     </b></td>
+    <td>PHYSICS</td><td><b>48     </b></td>
+    <td>CHEMISTRY</td><td><b>39     </b></td>
+    <td>ELECTRONICS </td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>39     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174699</td>
+    <td align="left">ERIC DENNY                                                                                          </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>68     </b></td>
+    <td>CHEMISTRY</td><td><b>68     </b></td>
+    <td>ELECTRONICS </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>66     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174700</td>
+    <td align="left">GAUTHAM G                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>61     </b></td>
+    <td>HINDI</td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>41     </b></td>
+    <td>CHEMISTRY</td><td><b>42     </b></td>
+    <td>ELECTRONICS </td><td><b>56     </b></td>
+    <td>MATHEMATICS</td><td><b>40     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174701</td>
+    <td align="left">JEWEL JOSHY                                                                                         </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>69     </b></td>
+    <td>HINDI</td><td><b>94     </b></td>
+    <td>PHYSICS</td><td><b>65     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>ELECTRONICS </td><td><b>69     </b></td>
+    <td>MATHEMATICS</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174702</td>
+    <td align="left">KAILAS RUBESH N                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>65     </b></td>
+    <td>HINDI</td><td><b>87     </b></td>
+    <td>PHYSICS</td><td><b>50     </b></td>
+    <td>CHEMISTRY</td><td><b>43     </b></td>
+    <td>ELECTRONICS </td><td><b>54     </b></td>
+    <td>MATHEMATICS</td><td><b>41     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174703</td>
+    <td align="left">SAJIN C S                                                                                           </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>62     </b></td>
+    <td>HINDI</td><td><b>78     </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>72     </b></td>
+    <td>ELECTRONICS </td><td><b>71     </b></td>
+    <td>MATHEMATICS</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174704</td>
+    <td align="left">SAM T ARIMBOOR                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>66     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>ELECTRONICS </td><td><b>77     </b></td>
+    <td>MATHEMATICS</td><td><b>65     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174705</td>
+    <td align="left">SAN MANNUMMEL                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>85     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>72     </b></td>
+    <td>CHEMISTRY</td><td><b>73     </b></td>
+    <td>ELECTRONICS </td><td><b>65     </b></td>
+    <td>MATHEMATICS</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174706</td>
+    <td align="left">SIVA A S                                                                                            </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>72     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>PHYSICS</td><td><b>49     </b></td>
+    <td>CHEMISTRY</td><td><b>56     </b></td>
+    <td>ELECTRONICS </td><td><b>61     </b></td>
+    <td>MATHEMATICS</td><td><b>46     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174707</td>
+    <td align="left">AMINA MINHA K S                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>96     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>80     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>ELECTRONICS </td><td><b>79     </b></td>
+    <td>MATHEMATICS</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174708</td>
+    <td align="left">ANLIYA MATHEW                                                                                       </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>95     </b></td>
+    <td>PHYSICS</td><td><b>67     </b></td>
+    <td>CHEMISTRY</td><td><b>64     </b></td>
+    <td>ELECTRONICS </td><td><b>64     </b></td>
+    <td>MATHEMATICS</td><td><b>53     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174709</td>
+    <td align="left">ANUGRAHA SUNILKUMAR                                                                                 </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>76     </b></td>
+    <td>CHEMISTRY</td><td><b>80     </b></td>
+    <td>ELECTRONICS </td><td><b>80     </b></td>
+    <td>MATHEMATICS</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174710</td>
+    <td align="left">KRISHNAPRIYA T                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>HINDI</td><td><b>87     </b></td>
+    <td>PHYSICS</td><td><b>43     </b></td>
+    <td>CHEMISTRY</td><td><b>44     </b></td>
+    <td>ELECTRONICS </td><td><b>55     </b></td>
+    <td>MATHEMATICS</td><td><b>38     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174711</td>
+    <td align="left">PRESTEENIYA ROSE                                                                                    </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>HINDI</td><td><b>93     </b></td>
+    <td>PHYSICS</td><td><b>51     </b></td>
+    <td>CHEMISTRY</td><td><b>59     </b></td>
+    <td>ELECTRONICS </td><td><b>48     </b></td>
+    <td>MATHEMATICS</td><td><b>44     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174712</td>
+    <td align="left">SHILPA FRANCIS                                                                                      </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>69     </b></td>
+    <td>HINDI</td><td><b>90     </b></td>
+    <td>PHYSICS</td><td><b>34     </b></td>
+    <td>CHEMISTRY</td><td><b>46     </b></td>
+    <td>ELECTRONICS </td><td><b>53     </b></td>
+    <td>MATHEMATICS</td><td><b>38     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174713</td>
+    <td align="left">SREELAKSHMI P A                                                                                     </td>
+    <td>SCIENCE        </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>PHYSICS</td><td><b>58     </b></td>
+    <td>CHEMISTRY</td><td><b>56     </b></td>
+    <td>ELECTRONICS </td><td><b>72     </b></td>
+    <td>MATHEMATICS</td><td><b>56     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174714</td>
+    <td align="left">ABHINAV O A                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>63     </b></td>
+    <td>MALAYALAM </td><td><b>65     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>73     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>55     </b></td>
+    <td>ECONOMICS </td><td><b>58     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>57     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174715</td>
+    <td align="left">ADITHYAN K S                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>MALAYALAM </td><td><b>91     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>94     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>62     </b></td>
+    <td>ECONOMICS </td><td><b>79     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174716</td>
+    <td align="left">AKHIL M S                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>62     </b></td>
+    <td>MALAYALAM </td><td><b>88     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>62     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>55     </b></td>
+    <td>ECONOMICS </td><td><b>66     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>62     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174717</td>
+    <td align="left">ALAN SUNNY                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>MALAYALAM </td><td><b>74     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>81     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>54     </b></td>
+    <td>ECONOMICS </td><td><b>60     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174718</td>
+    <td align="left">ALBY SHAIJU                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>54     </b></td>
+    <td>MALAYALAM </td><td><b>76     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>46     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>38     </b></td>
+    <td>ECONOMICS </td><td><b>45     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>35     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174719</td>
+    <td align="left">ALPHY K BENSON                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>87     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>67     </b></td>
+    <td>ECONOMICS </td><td><b>83     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174720</td>
+    <td align="left">ANSEL VINNY                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>99     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>76     </b></td>
+    <td>ECONOMICS </td><td><b>95     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174721</td>
+    <td align="left">ATHUL KRISHNA                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>MALAYALAM </td><td><b>98     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>100    </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>74     </b></td>
+    <td>ECONOMICS </td><td><b>93     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174722</td>
+    <td align="left">ELJO JOY                                                                                            </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>76     </b></td>
+    <td>MALAYALAM </td><td><b>92     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>72     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>44     </b></td>
+    <td>ECONOMICS </td><td><b>72     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>50     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174723</td>
+    <td align="left">HARIKRISHNAN O J                                                                                    </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>82     </b></td>
+    <td>MALAYALAM </td><td><b>95     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>75     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>47     </b></td>
+    <td>ECONOMICS </td><td><b>75     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>60     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174724</td>
+    <td align="left">HARRY JOSEPH DHEERAJ                                                                                </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>84     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>98     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>70     </b></td>
+    <td>ECONOMICS </td><td><b>93     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>75     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174725</td>
+    <td align="left">JEESAN P S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>99     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>84     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>59     </b></td>
+    <td>ECONOMICS </td><td><b>74     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174726</td>
+    <td align="left">JOVIN LINTO                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>MALAYALAM </td><td><b>92     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>100    </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>71     </b></td>
+    <td>ECONOMICS </td><td><b>97     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174727</td>
+    <td align="left">SABAREESH E S                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>86     </b></td>
+    <td>MALAYALAM </td><td><b>93     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>100    </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>66     </b></td>
+    <td>ECONOMICS </td><td><b>94     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174728</td>
+    <td align="left">SAMUEL ROBY                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>100    </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>71     </b></td>
+    <td>ECONOMICS </td><td><b>98     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174729</td>
+    <td align="left">STEEVE JACKSON                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>MALAYALAM </td><td><b>96     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>84     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>52     </b></td>
+    <td>ECONOMICS </td><td><b>90     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174730</td>
+    <td align="left">BALAMANI K S                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>73     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>92     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>74     </b></td>
+    <td>ECONOMICS </td><td><b>99     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174731</td>
+    <td align="left">DELLA A M                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>56     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>76     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>51     </b></td>
+    <td>ECONOMICS </td><td><b>80     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>67     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174732</td>
+    <td align="left">DEVANANDHA K M                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>94     </b></td>
+    <td>MALAYALAM </td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>98     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>74     </b></td>
+    <td>ECONOMICS </td><td><b>100    </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174733</td>
+    <td align="left">IRENE JOSHY                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>51     </b></td>
+    <td>MALAYALAM </td><td><b>78     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>63     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>44     </b></td>
+    <td>ECONOMICS </td><td><b>75     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174734</td>
+    <td align="left">JISMARIYA JAMES                                                                                     </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>58     </b></td>
+    <td>MALAYALAM </td><td><b>74     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>66     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>51     </b></td>
+    <td>ECONOMICS </td><td><b>90     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174735</td>
+    <td align="left">JISNA MARIYA JINU                                                                                   </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>MALAYALAM </td><td><b>95     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>98     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>76     </b></td>
+    <td>ECONOMICS </td><td><b>97     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>75     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174736</td>
+    <td align="left">KRISHNAPRIYA R                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>53     </b></td>
+    <td>MALAYALAM </td><td><b>86     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>77     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>69     </b></td>
+    <td>ECONOMICS </td><td><b>93     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174737</td>
+    <td align="left">LAKSHMI P B                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>70     </b></td>
+    <td>MALAYALAM </td><td><b>87     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>71     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>69     </b></td>
+    <td>ECONOMICS </td><td><b>99     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>59     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174738</td>
+    <td align="left">MEENAKSHY P B                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>60     </b></td>
+    <td>MALAYALAM </td><td><b>81     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>47     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>54     </b></td>
+    <td>ECONOMICS </td><td><b>83     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174739</td>
+    <td align="left">MEENAKSHY T S                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>71     </b></td>
+    <td>MALAYALAM </td><td><b>87     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>92     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>75     </b></td>
+    <td>ECONOMICS </td><td><b>97     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174740</td>
+    <td align="left">MEYA JOY                                                                                            </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>71     </b></td>
+    <td>MALAYALAM </td><td><b>95     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>68     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>54     </b></td>
+    <td>ECONOMICS </td><td><b>90     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>67     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174741</td>
+    <td align="left">SISIRA T A                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>44     </b></td>
+    <td>MALAYALAM </td><td><b>66     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>52     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>30     </b></td>
+    <td>ECONOMICS </td><td><b>55     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>39     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174742</td>
+    <td align="left">ABHILASH E S                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>67     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>68     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>40     </b></td>
+    <td>ECONOMICS </td><td><b>60     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>47     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174743</td>
+    <td align="left">ABHINAV P M                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>68     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>93     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>67     </b></td>
+    <td>ECONOMICS </td><td><b>94     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174744</td>
+    <td align="left">ABIN N L                                                                                            </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>72     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>83     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>68     </b></td>
+    <td>ECONOMICS </td><td><b>92     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>64     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174745</td>
+    <td align="left">ALAN DIXON                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>78     </b></td>
+    <td>HINDI</td><td><b>86     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>59     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>65     </b></td>
+    <td>ECONOMICS </td><td><b>86     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>44     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174746</td>
+    <td align="left">AMITH C P                                                                                           </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>65     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>68     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>65     </b></td>
+    <td>ECONOMICS </td><td><b>74     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>56     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174747</td>
+    <td align="left">CHRISTO V ANTO                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>74     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>82     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>70     </b></td>
+    <td>ECONOMICS </td><td><b>93     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>72     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174748</td>
+    <td align="left">EBIN JOY                                                                                            </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>83     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>70     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>58     </b></td>
+    <td>ECONOMICS </td><td><b>87     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174749</td>
+    <td align="left">GODWIN N S                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>73     </b></td>
+    <td>HINDI</td><td><b>99     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>72     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>55     </b></td>
+    <td>ECONOMICS </td><td><b>84     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>54     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174750</td>
+    <td align="left">HARIKRISHNAN E S                                                                                    </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>90     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>68     </b></td>
+    <td>ECONOMICS </td><td><b>97     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174751</td>
+    <td align="left">IRWIN PAULY                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>76     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>61     </b></td>
+    <td>ECONOMICS </td><td><b>70     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>68     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174752</td>
+    <td align="left">LINO LAINCHAN                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>77     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>88     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>68     </b></td>
+    <td>ECONOMICS </td><td><b>94     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174753</td>
+    <td align="left">RON CLETSON                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>70     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>63     </b></td>
+    <td>ECONOMICS </td><td><b>90     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174754</td>
+    <td align="left">ROSHAN THANJAN                                                                                      </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>90     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>76     </b></td>
+    <td>ECONOMICS </td><td><b>92     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>76     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174755</td>
+    <td align="left">VINAYAK A V                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>78     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>59     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>55     </b></td>
+    <td>ECONOMICS </td><td><b>75     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>70     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174756</td>
+    <td align="left">AISWARYA C                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>90     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>94     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>70     </b></td>
+    <td>ECONOMICS </td><td><b>98     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>78     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174757</td>
+    <td align="left">AKSHARA N.R                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>80     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>83     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>64     </b></td>
+    <td>ECONOMICS </td><td><b>91     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>77     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174758</td>
+    <td align="left">ANAGHA T A                                                                                          </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>81     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>73     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>63     </b></td>
+    <td>ECONOMICS </td><td><b>90     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>69     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174759</td>
+    <td align="left">ANAMIKA C S                                                                                         </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>98     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>79     </b></td>
+    <td>ECONOMICS </td><td><b>100    </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>79     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174760</td>
+    <td align="left">ANNA ROSE DAVIS                                                                                     </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>98     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>100    </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>79     </b></td>
+    <td>ECONOMICS </td><td><b>100    </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>80     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174761</td>
+    <td align="left">ASIN ROSE A J                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>81     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>74     </b></td>
+    <td>ECONOMICS </td><td><b>98     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>74     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174762</td>
+    <td align="left">AYONA STEPHEN                                                                                       </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>87     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>95     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>76     </b></td>
+    <td>ECONOMICS </td><td><b>90     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>63     </b></td>
+    </tr>
+    
+	
+    <tr class="mark">
+    <td style="font-weight:bold">24174763</td>
+    <td align="left">GAYATHRI K M                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>91     </b></td>
+    <td>HINDI</td><td><b>100    </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>92     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>74     </b></td>
+    <td>ECONOMICS </td><td><b>88     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>73     </b></td>
+    </tr>
+    
+	
+    <tr class="mark2">
+    <td style="font-weight:bold">24174764</td>
+    <td align="left">JESNA JAISON                                                                                        </td>
+    <td>COMMERCE       </td>
+    <td>ENGLISH</td><td><b>72     </b></td>
+    <td>HINDI</td><td><b>98     </b></td>
+    <td>BUSINESS STUDIES WITH  FUNCTIONAL MANAGEMENT </td><td><b>65     </b></td>
+    <td>ACCOUNTANCY WITH COMPUTER ACCOUNTING</td><td><b>53     </b></td>
+    <td>ECONOMICS </td><td><b>74     </b></td>
+    <td>COMPUTER APPLICATION</td><td><b>53     </b></td>
+    </tr>
+    
+	
+</tbody></table>
+<br>
+
+<br>
+</center>
+</div>
+</span>
+					</td>
+				</tr>
+				<tr>
+					<td id="footertd" align="center" height="70" background="./DHSE First Year Examination Schoolwise Results - 2024_files/dhseftr.jpg" xbgcolor="#305876">For any result related queries click <a target="_blank" href="http://dhsekerala.gov.in/contacts.htm" class="hov" style="TEXT-DECORATION:none;xcolor:#5305876"> Here</a><br>
+						Data Provided By Directorate of Higher Secondary Education, Kerala.
+						<br>
+						IT Support by
+							National Informatics Centre, Kerala State Centre.<br>
+							<br>
+					<div style="font-face:verdana;font-size:11px;color:#660000;#0F3D6A;text-align:justify"><u>Disclaimer</u>:  Neither NIC nor Directorate of Higher Secondary Education is responsible for any inadvertent error that may have crept in the results being published on net. The results published on net are for immediate information to the examinees.These cannot be treated as original mark sheets. Original marksheets will be issued by the Directorate of Higher Secondary Education separately. 
+					</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</form>
+	
+
+</body></html>
